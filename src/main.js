@@ -5,9 +5,12 @@ import '~/assets/css/main.scss'
 
 import DefaultLayout from '~/layouts/Default.vue'
 import HeroLayout from '~/layouts/Hero.vue'
+import CurtainsLayout from '~/layouts/Curtains.vue'
 import NavBar from '~/components/NavBar.vue'
 import Footer from '~/components/Footer.vue'
 import HeroContainer from '~/components/HeroContainer.vue'
+import HeroCurtains from '~/components/HeroCurtains.vue'
+
 import Card from '~/components/Card.vue'
 import VueScrollTo from 'vue-scrollto'
 import EventContainer from '~/components/EventContainer.vue'
@@ -26,10 +29,13 @@ export default function (Vue, {
   // Set default layout as a global component
   Vue.component('Layout', DefaultLayout)
   Vue.component('LayoutHero', HeroLayout)
+  Vue.component('LayoutCurtains', CurtainsLayout)
+
 
   //add page parts as default components
   Vue.component('nav-bar', NavBar)
   Vue.component('hero-container', HeroContainer)
+  Vue.component('hero-curtains', HeroCurtains)
   Vue.component('g-footer', Footer)
 
   //cards
@@ -42,7 +48,19 @@ export default function (Vue, {
   Vue.component('tag-nav', TagNav)
 
   //initilize other plugins
-  Vue.use(VueScrollTo);
+  Vue.use(VueScrollTo, {
+    container: "body",
+    duration: 200,
+    easing: "ease-out",
+    offset: -200,
+    force: true,
+    cancelable: true,
+    onStart: false,
+    onDone: false,
+    onCancel: false,
+    x: false,
+    y: true
+  });
 
   Vue.filter('formatDate', function (value, format) {
     if (!value) return;
@@ -62,7 +80,7 @@ export default function (Vue, {
     if (!value) return;
     let date,
       isoTimestamp;
-    let seperator = " | ";
+    let seperator = "  ";
     format = format ? format : 'HH:mm z';
     isoTimestamp = moment(value, 'h:mm a').isValid();
 

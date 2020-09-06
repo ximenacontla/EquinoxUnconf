@@ -1,12 +1,12 @@
 <template>
-  <header class="header sticky top-0 bg-white mb-5">
+  <header class="header sticky top-0 bg-white">
     <div class="h-2 w-full bg-primary-500"></div>
     <nav class="flex items-center justify-between flex-wrap py-6 container">
       <!-- site title / logo -->
       <div class="flex items-center flex-no-shrink mr-6">
         <strong>
           <g-link to="/" :title="$static.metadata.siteName">
-            <g-image src="../../static/logo.svg" class="w-40" width="500" height="40" alt="logo" />
+            <g-image src="../../static/logo.svg" class="w-40" width="500" height="100" alt="logo" />
           </g-link>
         </strong>
       </div>
@@ -29,14 +29,16 @@
         class="w-full sm:flex sm:items-center sm:w-auto flex-grow sm:flex-grow-0"
       >
         <a
-          v-if="$route.path === '/example-hero/'"
-          href="#details"
-          v-scroll-to="'#details'"
+          v-if="$route.path === '/'"
+          href="#unconference"
+          v-scroll-to="'#unconference'"
           class="nav-link"
-        >Details</a>
-        <g-link v-else to="/example-hero/#details" class="nav-link">Details</g-link>
-        <g-link class="nav-link" to="/">Home</g-link>
-        <g-link class="nav-link" to="/example-hero/">Example Hero</g-link>
+        >Unconference</a>
+        <g-link v-else to="/#unconferece" class="nav-link">Unconference</g-link>
+        <a v-if="$route.path === '/'" href="#agenda" v-scroll-to="'#agenda'" class="nav-link">Agenda</a>
+        <g-link v-else to="/#agenda" class="nav-link">Agenda</g-link>
+        <a v-if="$route.path === '/'" href="#faq" v-scroll-to="'#faq'" class="nav-link">FAQ</a>
+        <g-link v-else to="/#faq" class="nav-link">FAQ</g-link>
       </div>
       <!-- End navigation Links-->
     </nav>

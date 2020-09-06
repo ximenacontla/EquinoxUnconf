@@ -5,7 +5,7 @@
     <div v-else class="p-4 mt-4">
       <p>sorry, nothing to show at the moment!</p>
     </div>
-    <tag-nav class="pt-4" />
+    <tag-nav class="pt-10" />
   </div>
 </template>
 
