@@ -6,7 +6,7 @@
       <div class="flex items-center flex-no-shrink mr-6">
         <strong>
           <g-link to="/" :title="$static.metadata.siteName">
-            <g-image src="../../static/hackalonglogo1.png" class="w-40" alt="logo" />
+            <g-image src="../../static/logo.svg" class="w-40" width="500" height="40" alt="logo" />
           </g-link>
         </strong>
       </div>
@@ -55,14 +55,14 @@ query {
 export default {
   data() {
     return {
-      open: false
+      open: false,
     };
   },
   methods: {
     toggle() {
       this.open = !this.open;
-    }
-  }
+    },
+  },
 };
 </script>
 

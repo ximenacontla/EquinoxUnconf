@@ -49,36 +49,36 @@
 <script>
 export default {
   metaInfo: {
-    title: "Hero Example !"
+    title: "Hero Example !",
   },
 
   data() {
     return {
-      heroBG: "bg.jpg",
+      heroBG: "bg.png",
       cards: [
         {
           title: "this one has a link",
           img: "https://picsum.photos/600/300",
           link: "https://vuejs.org/v2/guide/components-props.html",
           content:
-            "blanditiis animi sequi beatae nisi facilis maiores voluptate doloribus necessitatibus est laborum vel. Quasi, nisi. "
+            "blanditiis animi sequi beatae nisi facilis maiores voluptate doloribus necessitatibus est laborum vel. Quasi, nisi. ",
         },
         {
           title: "hello world",
-          img: "card.png",
+          img: "bg.png",
           extraClassImg: "h-64",
           content:
-            "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis neque, mollitia a magni ducimus aliquam blanditiis animi sequi beatae nisi facilis maiores voluptate doloribus necessitatibus est laborum vel. Quasi, nisi. "
+            "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis neque, mollitia a magni ducimus aliquam blanditiis animi sequi beatae nisi facilis maiores voluptate doloribus necessitatibus est laborum vel. Quasi, nisi. ",
         },
 
         {
           title: "No image here",
           content:
-            "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis neque, mollitia a magni ducimus aliquam blanditiis animi sequi beatae nisi facilis maiores voluptate doloribus necessitatibus est laborum vel. Quasi, nisi. "
-        }
-      ]
+            "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis neque, mollitia a magni ducimus aliquam blanditiis animi sequi beatae nisi facilis maiores voluptate doloribus necessitatibus est laborum vel. Quasi, nisi. ",
+        },
+      ],
     };
-  }
+  },
 };
 </script>
 

@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1590.4 159.4">
+<style>.a{fill:none;stroke-width:2;stroke:#000;}.b{stroke-width:2;}.c{stroke-width:4;}</style>
+<a transform="translate(-195.7 66.182)">
+<g class="a">
+<g class="b"
+><rect x="46.9" y="77.7" width="14.1" height="25.8" rx="7.1" ry="7.2"/>
+<circle cx="57.9" cy="102.2" r="2.4"/>
+<rect x="46.9" y="77.7" width="14.1" height="25.8" rx="7.1" ry="7.2"/>
+<path d="m79.4 77.3v19.6c0 5.4-6.2 6.9-9.9 6.9-3.7 0-3.5-2.3-3.5-6.5v-20"/></g>
+<path d="m-75.6-100.1h-9.3l4.7-8.1z" class="c"/>
+<circle cx="86.7" cy="71.9" r="1.8" class="b"/>
+<circle cx="38.7" cy="90.4" r="1.8" class="b"/>
+<path d="m18 101.1h-141.8m140.3 0c8.1 0 7.5 0.8 12-14.2 4.5-15 7-13.8 13.3-13.8" class="b"/>
+<path d="m16.6 79.8h-140.2m166.9 28c-8.1 0-10 0.5-14.5-14.5-4.5-15-5.9-13.5-12.2-13.5" class="b"/>
+</g>
+</a>
+<a transform="rotate(180 -10.876 123.43)">
+<g class="a">
+<g class="b">
+<rect x="46.9" y="77.7" width="14.1" height="25.8" rx="7.1" ry="7.2"/>
+<circle cx="57.9" cy="102.2" r="2.4"/>
+<rect x="46.9" y="77.7" width="14.1" height="25.8" rx="7.1" ry="7.2"/>
+<path d="m79.4 77.3v19.6c0 5.4-6.2 6.9-9.9 6.9-3.7 0-3.5-2.3-3.5-6.5v-20"/>
+</g>
+<path d="m-75.6-100.1h-9.3l4.7-8.1z" class="c"/>
+<circle cx="86.7" cy="71.9" r="1.8" class="b"/>
+<circle cx="38.7" cy="90.4" r="1.8" class="b"/>
+<path d="m18 101.1h-141.8m140.3 0c8.1 0 7.5 0.8 12-14.2 4.5-15 7-13.8 13.3-13.8" class="b"/>
+<path d="m16.6 79.8h-140.2m166.9 28c-8.1 0-10 0.5-14.5-14.5-4.5-15-5.9-13.5-12.2-13.5" class="b"/>
+</g>
+</a>
+</svg>

@@ -1,6 +1,6 @@
 <template>
   <div class="w-full sm:w-1/2 md:w-1/3 flex flex-col p-3" :class="extraClass">
-    <div class="bg-white rounded-lg shadow-lg overflow-hidden flex-1 flex flex-col">
+    <div class="bg-white shadow-lg overflow-hidden flex-1 flex flex-col">
       <div class="bg-primary-600 w-full" :class="{'h-48' : !img}">
         <g-image
           v-if="img"
@@ -27,27 +27,27 @@
 export default {
   props: {
     title: {
-      required: false
+      required: false,
     },
     content: { required: false },
     img: {
-      required: false
+      required: false,
     },
     link: {
-      required: false
+      required: false,
     },
     tags: {
-      required: false
+      required: false,
     },
     extraClass: {
-      required: false
+      required: false,
     },
     extraClassImg: {
-      required: false
-    }
+      required: false,
+    },
   },
   computed: {
-    setImage: function() {
+    setImage: function () {
       if (
         this.img.indexOf("http://") === 0 ||
         this.img.indexOf("https://") === 0
@@ -56,7 +56,7 @@ export default {
       } else {
         return require("@/assets/img/" + this.img);
       }
-    }
-  }
+    },
+  },
 };
 </script>
