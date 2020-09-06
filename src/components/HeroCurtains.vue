@@ -1,0 +1,197 @@
+<template>
+  <div
+    class="flex flex-col min-h-screen justify-center items-center relative overflow-hidden top-0"
+  >
+    <div class="canvas-wrapper overflow-hidden">
+      <div class="bg-split h-screen w-screen absolute z-20"></div>
+      <div id="canvas"></div>
+      <div class="small-plane" id="animated-header">
+        <!-- <img src="img/coho_5.png" alt="mandala" data-sampler="planeTexture" /> -->
+        <g-image v-if="bg" :src="setImage" data-sampler="planeTexture" class="shade-img" />
+      </div>
+    </div>
+
+    <div class="logo z-30 w-100">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1590 159" width="auto" height="auto">
+        <g
+          fill="none"
+          stroke="#000"
+          stroke-linecap="round"
+          stroke-width="1.6"
+          transform="matrix(3.77953 0 0 3.77953 1206.15 -511.845)"
+        >
+          <a transform="translate(-195.699 66.182)">
+            <path
+              d="M16.564 101.094c8.096 0 7.536.804 12.034-14.234 4.498-15.038 7.006-13.804 13.303-13.804"
+            />
+            <path
+              d="M43.264 107.879c-8.096 0-9.964.534-14.462-14.504-4.498-15.038-5.941-13.534-12.238-13.534"
+            />
+            <rect width="14.147" height="25.817" x="46.618" y="77.854" rx="7.073" ry="7.152" />
+            <circle cx="57.937" cy="102.217" r="2.4" />
+            <rect width="14.147" height="25.817" x="46.618" y="77.854" rx="7.073" ry="7.152" />
+            <path
+              d="M79.445 77.349v19.558c0 5.402-6.153 6.93-9.87 6.93-3.718 0-3.55-2.33-3.55-6.51V77.348"
+            />
+            <path
+              stroke-width="4.109"
+              d="M-75.578-100.087h-9.305l4.653-8.058z"
+              transform="matrix(-.40108 0 0 -.37798 46.61 62.607)"
+            />
+            <circle cx="86.658" cy="71.917" r="1.764" />
+            <circle cx="38.718" cy="90.445" r="1.764" />
+            <path stroke-linecap="butt" d="M18.007 101.094h-141.756M16.564 79.841h-140.199" />
+          </a>
+          <a transform="rotate(180 -10.876 123.426)">
+            <path
+              d="M16.564 101.094c8.096 0 7.536.804 12.034-14.234 4.498-15.038 7.006-13.804 13.303-13.804"
+            />
+            <path
+              d="M43.264 107.879c-8.096 0-9.964.534-14.462-14.504-4.498-15.038-5.941-13.534-12.238-13.534"
+            />
+            <rect width="14.147" height="25.817" x="46.618" y="77.854" rx="7.073" ry="7.152" />
+            <circle cx="57.937" cy="102.217" r="2.4" />
+            <rect width="14.147" height="25.817" x="46.618" y="77.854" rx="7.073" ry="7.152" />
+            <path
+              d="M79.445 77.349v19.558c0 5.402-6.153 6.93-9.87 6.93-3.718 0-3.55-2.33-3.55-6.51V77.348"
+            />
+            <path
+              stroke-width="4.109"
+              d="M-75.578-100.087h-9.305l4.653-8.058z"
+              transform="matrix(-.40108 0 0 -.37798 46.61 62.607)"
+            />
+            <circle cx="86.658" cy="71.917" r="1.764" />
+            <circle cx="38.718" cy="90.445" r="1.764" />
+            <path stroke-linecap="butt" d="M18.007 101.094h-141.756M16.564 79.841h-140.199" />
+          </a>
+        </g>
+      </svg>
+    </div>
+  </div>
+</template>
+<script>
+import * as curtains_settings from "../libs/curtains_settings";
+import anime from "animejs/lib/anime.es.js";
+export default {
+  mixins: ["curtains_settings"],
+  props: {
+    bg: {
+      required: false,
+    },
+  },
+  computed: {
+    setImage: function () {
+      return require("@/assets/img/" + this.bg);
+    },
+  },
+  mounted() {
+    var lineDrawing = anime({
+      targets: "path, rect, circle",
+      strokeDashoffset: [anime.setDashoffset, 0],
+      easing: "easeInOutCubic",
+      duration: 3000,
+      begin: function (anim) {
+        document.querySelector("path").setAttribute("stroke", "black");
+      },
+      complete: function (anim) {},
+      autoplay: true,
+    });
+    curtains_settings.initCurtains();
+  },
+};
+</script>
+<style lang="scss" scoped>
+.shade-img {
+  display: none;
+}
+
+.no-canvas .shade-img {
+  display: block;
+}
+
+.canvas-wrapper {
+  width: 100vw;
+  position: absolute;
+  top: 0;
+  height: 100vh;
+  /* mobile viewport bug fix */
+  min-height: -webkit-fill-available;
+  display: block;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 255, 255, 1) 50%,
+    rgba(0, 0, 0, 1) 50%,
+    rgba(0, 0, 0, 1) 100%
+  );
+}
+
+#canvas {
+  position: fixed;
+  transform: translate3d(0, 0, 0);
+  top: -10vh;
+  right: 0;
+  left: 0;
+  height: 120vh;
+  min-height: -webkit-fill-available;
+  width: 120vw;
+  z-index: 1;
+  opacity: 0;
+  animation: load 2s ease-out forwards;
+}
+
+#textCanvas {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 100vh;
+
+  z-index: 10;
+}
+
+.small-plane {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100vw;
+  height: 100vh;
+  min-height: -webkit-fill-available;
+}
+
+.bg-split {
+  animation: load 5s ease-in forwards;
+  background: rgb(0, 0, 0);
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.9) 34%,
+    rgba(255, 255, 255, 1) 50%,
+    rgba(0, 0, 0, 1) 50%,
+    rgba(0, 0, 0, 0.9) 64%,
+    rgba(0, 0, 0, 0) 100%
+  );
+}
+
+.logo {
+  z-index: 20;
+  max-width: 100vw;
+  height: auto;
+  color: white;
+  mix-blend-mode: difference;
+  filter: invert(1) grayscale(1) contrast(9);
+}
+
+.logo svg {
+  max-width: 100vw;
+  width: 100vw;
+  height: auto;
+}
+
+@keyframes load {
+  100% {
+    opacity: 1;
+  }
+}
+</style>
+

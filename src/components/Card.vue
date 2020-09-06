@@ -1,24 +1,25 @@
 <template>
-  <div class="w-full sm:w-1/2 md:w-1/3 flex flex-col p-3" :class="extraClass">
-    <div class="bg-white shadow-lg overflow-hidden flex-1 flex flex-col">
-      <div class="bg-primary-600 w-full" :class="{'h-48' : !img}">
-        <g-image
-          v-if="img"
-          alt="Example image"
-          :src="setImage"
-          class="object-cover h-48 w-full"
-          :class="extraClassImg"
-        />
-      </div>
-      <div class="p-4 flex-1 flex flex-col">
-        <h3 class="mb-4 text-2xl">{{title}}</h3>
+  <div
+    class="bg-white border border-primary-900 overflow-hidden flex-1 flex flex-col"
+    :class="extraClass"
+  >
+    <div class="bg-primary-600 w-full" :class="{'h-48' : !img}">
+      <g-image
+        v-if="img"
+        alt="Example image"
+        :src="setImage"
+        class="object-cover h-48 w-full"
+        :class="extraClassImg"
+      />
+    </div>
+    <div class="p-4 flex-1 flex flex-col">
+      <h3 class="mb-4 text-2xl">{{title}}</h3>
 
-        <div class="mb-4 text-grey-darker text-sm flex-1">
-          <p>{{content}}</p>
-        </div>
-
-        <a v-if="link" :href="link" class="uppercase text-primary">see more</a>
+      <div class="mb-4 text-grey-darker text-sm flex-1">
+        <p>{{content}}</p>
       </div>
+
+      <a v-if="link" :href="link" class="uppercase text-primary">see more</a>
     </div>
   </div>
 </template>
