@@ -22,24 +22,28 @@ collections:
           dateFormat: "YYYY-MM-DD",
           timeFormat: false,
           pickerUtc: true,
+          required: false,
         }
       - {
           label: "Start Time (format without seperator eg. 1600 or 1830)",
           name: "start_time",
           default: "0000",
           widget: "string",
+          required: false,
         }
       - {
           label: "End Time (format without seperator eg. 1600 or 1830)",
           name: "end_time",
           default: "0000",
           widget: "string",
+          required: false,
         }
       - {
           label: "Featured Image",
           name: "thumbnail",
           widget: "image",
           media_library: { config: { multiple: false } },
+          required: false,
         }
       - {
           label: "Tags (comma seperated list eg: item1, item2)",
@@ -49,5 +53,6 @@ collections:
           valueField: "title",
           searchFields: ["title"],
           displayFields: ["title"],
+          required: false,
         }
       - { label: "Body", name: "body", widget: "markdown" }
