@@ -6,7 +6,7 @@ excerpt: Illi enim inter se dissentiunt. Cum autem venissemus in Academiae non
 date: 2020-09-22T21:32:43.247Z
 start_time: "1500"
 end_time: "1530"
-thumbnail: /uploads/events/moon.png
+thumbnail: ""
 tags:
   - community
   - self-organization
