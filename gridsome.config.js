@@ -14,7 +14,7 @@ const postcssPlugins = [
 if (process.env.NODE_ENV === 'production') postcssPlugins.push(purgecss(require('./purgecss.config.js')))
 
 module.exports = {
-  siteName: 'Hackalong boilerplate',
+  siteName: 'Equinox Unconference',
   templates: {
     Tag: [{
       path: '/event/tag/:title',
