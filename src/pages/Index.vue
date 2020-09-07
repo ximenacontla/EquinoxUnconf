@@ -10,20 +10,18 @@
         <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sed sequi, id architecto est obcaecati ipsum accusantium quod aliquam ratione illum, excepturi modi suscipit a eos esse alias ad! Commodi, voluptatem.</p>
       </div>
       <!-- card examples -->
-      <div class="grid gap-3 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 my-40">
-        <card v-for="card in cards" v-bind="card" :key="card.title"></card>
-      </div>
-
-      <div class="grid gap-3 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 bg-black-900 p-3">
-        <card v-for="card in cards" v-bind="card" :key="card.title"></card>
+      <div id="teach" class="grid gap-3 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 my-40">
+        <card v-for="card in cardsIntro" v-bind="card" :key="card.title"></card>
       </div>
 
       <!-- agenda -->
       <div class="flex flex-wrap my-40">
-        <event-container id="agenda" />
+        <event-container id="learn" />
       </div>
-
-      <div id="faq" class="my-40">
+      <div class="grid gap-3 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 bg-black-900 p-3">
+        <card v-for="card in cards" v-bind="card" :key="card.title"></card>
+      </div>
+      <div id="share" class="my-40">
         <div>
           <h2>Hats</h2>
           <span class="block text-xs mb-4">about the roles</span>
@@ -68,6 +66,28 @@ export default {
   data() {
     return {
       heroBG: "bg.png",
+      cardsIntro: [
+        {
+          title: "Teach",
+          img: "https://picsum.photos/600/300",
+          link: "https://vuejs.org/v2/guide/components-props.html",
+          content:
+            "blanditiis animi sequi beatae nisi facilis maiores voluptate doloribus necessitatibus est laborum vel. Quasi, nisi. ",
+        },
+        {
+          title: "Learn",
+          img: "bg.png",
+          extraClassImg: "h-64",
+          content:
+            "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis neque, mollitia a magni ducimus aliquam blanditiis animi sequi beatae nisi facilis maiores voluptate doloribus necessitatibus est laborum vel. Quasi, nisi. ",
+        },
+
+        {
+          title: "Share",
+          content:
+            "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis neque, mollitia a magni ducimus aliquam blanditiis animi sequi beatae nisi facilis maiores voluptate doloribus necessitatibus est laborum vel. Quasi, nisi. ",
+        },
+      ],
       cards: [
         {
           title: "this one has a link",
