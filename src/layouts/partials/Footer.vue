@@ -1,5 +1,8 @@
 <template>
   <footer class="bg-primary-500 py-4 mt-5 text-white text-sm">
+    <div class="container mx-auto flex flex-col lg:flex-row items-center">
+      <thank-you />
+    </div>
     <div class="container mx-auto flex flex-col lg:flex-row items-center justify-between">
       <div class="mb-8 lg:mb-0">
         <div>{{ new Date().getFullYear() }}</div>

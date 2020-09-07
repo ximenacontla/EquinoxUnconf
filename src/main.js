@@ -6,16 +6,18 @@ import '~/assets/css/main.scss'
 import DefaultLayout from '~/layouts/Default.vue'
 import HeroLayout from '~/layouts/Hero.vue'
 import CurtainsLayout from '~/layouts/Curtains.vue'
-import NavBar from '~/components/NavBar.vue'
-import Footer from '~/components/Footer.vue'
-import HeroContainer from '~/components/HeroContainer.vue'
-import HeroCurtains from '~/components/HeroCurtains.vue'
+import NavBar from '~/layouts/partials/NavBar.vue'
+import Footer from '~/layouts/partials/Footer.vue'
+import HeroContainer from '~/layouts/partials/HeroContainer.vue'
+import HeroCurtains from '~/layouts/partials/HeroCurtains.vue' //animation for equinox
 
 import Card from '~/components/Card.vue'
 import VueScrollTo from 'vue-scrollto'
 import EventContainer from '~/components/EventContainer.vue'
 import EventList from '~/components/EventList.vue'
 import TagNav from '~/components/TagNav.vue'
+
+import ThankYou from '~/components/ThankYouContainer.vue'
 
 
 
@@ -46,6 +48,10 @@ export default function (Vue, {
   Vue.component('event-container', EventContainer)
   Vue.component('event-list', EventList)
   Vue.component('tag-nav', TagNav)
+
+  // credits 
+
+  Vue.component('thank-you', ThankYou)
 
   //initilize other plugins
   Vue.use(VueScrollTo, {

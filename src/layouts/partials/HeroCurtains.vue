@@ -1,18 +1,25 @@
 <template>
   <div
-    class="flex flex-col min-h-screen justify-center items-center relative overflow-hidden top-0"
+    class="flex flex-col justify-center items-center relative overflow-hidden top-0"
+    style="min-height:60vh"
   >
     <div class="canvas-wrapper overflow-hidden">
-      <div class="bg-split h-screen w-screen absolute z-20"></div>
+      <div class="bg-split w-screen absolute z-20" style="height:60vh"></div>
       <div id="canvas"></div>
       <div class="small-plane" id="animated-header">
         <!-- <img src="img/coho_5.png" alt="mandala" data-sampler="planeTexture" /> -->
-        <g-image v-if="bg" :src="setImage" data-sampler="planeTexture" class="shade-img" />
+        <g-image
+          v-if="bg"
+          :immediate="true"
+          :src="setImage"
+          data-sampler="planeTexture"
+          class="shade-img"
+        />
       </div>
     </div>
 
     <div class="logo z-30 w-100">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1590 159" width="auto" height="auto">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1590 159">
         <g
           fill="none"
           stroke="#000"
@@ -70,7 +77,7 @@
   </div>
 </template>
 <script>
-import * as curtains_settings from "../libs/curtains_settings";
+import * as curtains_settings from "../../libs/curtains_settings";
 import anime from "animejs/lib/anime.es.js";
 export default {
   mixins: ["curtains_settings"],
@@ -113,7 +120,7 @@ export default {
   width: 100vw;
   position: absolute;
   top: 0;
-  height: 100vh;
+  height: 60vh;
   /* mobile viewport bug fix */
   min-height: -webkit-fill-available;
   display: block;
@@ -145,7 +152,7 @@ export default {
   top: 0;
   right: 0;
   left: 0;
-  height: 100vh;
+  height: 60vh;
 
   z-index: 10;
 }
@@ -155,7 +162,7 @@ export default {
   top: 0;
   right: 0;
   width: 100vw;
-  height: 100vh;
+  height: 60vh;
   min-height: -webkit-fill-available;
 }
 

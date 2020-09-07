@@ -3,12 +3,11 @@
     <div class="h-2 w-full bg-primary-500"></div>
     <nav class="flex items-center justify-between flex-wrap py-6 container">
       <!-- site title / logo -->
-      <div class="flex items-center flex-no-shrink mr-6">
-        <strong>
-          <g-link to="/" :title="$static.metadata.siteName">
-            <g-image src="../../static/logo.svg" class="w-40" width="500" height="100" alt="logo" />
-          </g-link>
-        </strong>
+      <div class="flex items-center flex-no-shrink mr-6 h-10">
+        <g-link class="nav-link" to="/" :title="$static.metadata.siteName">
+          Equinox 22/09/2020
+          <!-- <g-image src="../../static/logo.svg" width="50" height="50" alt="logo" fit="outside" /> -->
+        </g-link>
       </div>
       <!-- end site title / logo -->
 
@@ -35,8 +34,8 @@
           class="nav-link"
         >Unconference</a>
         <g-link v-else to="/#unconferece" class="nav-link">Unconference</g-link>
-        <a v-if="$route.path === '/'" href="#teach" v-scroll-to="'#teach'" class="nav-link">Teach</a>
-        <g-link v-else to="/#teach" class="nav-link">Teach</g-link>
+
+        <g-link to="/teach" class="nav-link">Teach</g-link>
         <a v-if="$route.path === '/'" href="#learn" v-scroll-to="'#learn'" class="nav-link">Learn</a>
         <g-link v-else to="/#learn" class="nav-link">Learn</g-link>
         <a v-if="$route.path === '/'" href="#share" v-scroll-to="'#share'" class="nav-link">Share</a>

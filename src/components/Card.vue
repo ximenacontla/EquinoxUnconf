@@ -1,8 +1,5 @@
 <template>
-  <div
-    class="bg-white border border-primary-900 overflow-hidden flex-1 flex flex-col"
-    :class="extraClass"
-  >
+  <div class="card" :class="extraClass">
     <div class="bg-primary-600 w-full" :class="{'h-48' : !img}">
       <g-image
         v-if="img"
@@ -12,14 +9,14 @@
         :class="extraClassImg"
       />
     </div>
-    <div class="p-4 flex-1 flex flex-col">
+    <div class="card-body">
       <h3 class="mb-4 text-2xl">{{title}}</h3>
 
       <div class="mb-4 text-grey-darker text-sm flex-1">
         <p>{{content}}</p>
       </div>
 
-      <a v-if="link" :href="link" class="uppercase text-primary">see more</a>
+      <a v-if="link" :href="link" class="uppercase text-primary self-end stretched-link">learn more</a>
     </div>
   </div>
 </template>
