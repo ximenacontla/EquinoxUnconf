@@ -26,7 +26,7 @@ module.exports = {
       options: {
         typeName: 'Event', // Required
         baseDir: './content/events', // Where .md files are located
-        pathPrefix: '/event', // Add route prefix. Optional
+        pathPrefix: '/events', // Add route prefix. Optional
         template: './src/templates/Event.vue', // Optional
         refs: {
           tags: {
