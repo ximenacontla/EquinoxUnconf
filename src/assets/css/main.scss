@@ -13,7 +13,7 @@ h1 {
 }
 
 h2 {
-    @apply text-xl font-bold;
+    @apply text-2xl font-bold;
 }
 
 h3 {
@@ -21,7 +21,27 @@ h3 {
 }
 
 a {
-    @apply text-accent-600;
+    @apply text-accent-500;
+    transition: color 0.1s ease-out;
+
+    &:hover {
+        @apply text-secondary-500;
+        transition: color 0.05s ease-out;
+    }
+
+    &.stretched-link {
+        &:after {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            z-index: 1;
+            pointer-events: auto;
+            content: "";
+            background-color: rgba(0, 0, 0, 0);
+        }
+    }
 }
 
 p {
@@ -48,5 +68,47 @@ html {
 }
 
 .badge a {
-    @apply text-white
+    @apply text-white uppercase;
+
+    &:hover {
+        @apply text-secondary-500
+    }
+}
+
+.subtitle {
+    @apply text-grey-900 block mb-4;
+}
+
+.h-96 {
+    height: 24rem;
+}
+
+.card {
+
+    @apply bg-white border border-primary-900 overflow-hidden flex-1 flex flex-col relative;
+
+    .card-body {
+        @apply p-4 flex-1 flex flex-col;
+    }
+}
+
+.card-grid-3 {
+    @apply grid gap-3 grid-cols-1 my-40;
+
+    @media (min-width: 768px) {
+        @apply grid-cols-2
+    }
+
+    @media (min-width: 1024px) {
+        @apply grid-cols-3
+    }
+
+}
+
+.card-grid-2 {
+    @apply grid gap-5 grid-cols-1;
+
+    @media (min-width: 768px) {
+        @apply grid-cols-2
+    }
 }
