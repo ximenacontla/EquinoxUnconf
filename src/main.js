@@ -77,7 +77,7 @@ export default function (Vue, {
     return date
   });
   Vue.filter('formatTime', function (value, format, timezones) {
-    if (!value) return;
+    if (!value || value === "0000") return;
     let date,
       isoTimestamp;
     let seperator = "  ";
