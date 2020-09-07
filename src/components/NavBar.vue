@@ -35,10 +35,12 @@
           class="nav-link"
         >Unconference</a>
         <g-link v-else to="/#unconferece" class="nav-link">Unconference</g-link>
-        <a v-if="$route.path === '/'" href="#agenda" v-scroll-to="'#agenda'" class="nav-link">Agenda</a>
-        <g-link v-else to="/#agenda" class="nav-link">Agenda</g-link>
-        <a v-if="$route.path === '/'" href="#faq" v-scroll-to="'#faq'" class="nav-link">FAQ</a>
-        <g-link v-else to="/#faq" class="nav-link">FAQ</g-link>
+        <a v-if="$route.path === '/'" href="#teach" v-scroll-to="'#teach'" class="nav-link">Teach</a>
+        <g-link v-else to="/#teach" class="nav-link">Teach</g-link>
+        <a v-if="$route.path === '/'" href="#learn" v-scroll-to="'#learn'" class="nav-link">Learn</a>
+        <g-link v-else to="/#learn" class="nav-link">Learn</g-link>
+        <a v-if="$route.path === '/'" href="#share" v-scroll-to="'#share'" class="nav-link">Share</a>
+        <g-link v-else to="/#share" class="nav-link">Share</g-link>
       </div>
       <!-- End navigation Links-->
     </nav>
