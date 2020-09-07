@@ -1,10 +1,9 @@
 <template>
   <div
-    class="flex flex-col justify-center items-center relative overflow-hidden top-0"
-    style="min-height:60vh"
+    class="flex flex-col justify-center items-center relative overflow-hidden top-0 outer-wrapper"
   >
     <div class="canvas-wrapper overflow-hidden">
-      <div class="bg-split w-screen absolute z-20" style="height:60vh"></div>
+      <div class="bg-split w-screen absolute z-20"></div>
       <div id="canvas"></div>
       <div class="small-plane" id="animated-header">
         <!-- <img src="img/coho_5.png" alt="mandala" data-sampler="planeTexture" /> -->
@@ -108,6 +107,12 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
+.outer-wrapper {
+  @media (max-width: 1024px) {
+    height: 300px;
+  }
+  height: 60vh;
+}
 .shade-img {
   display: none;
 }
@@ -117,12 +122,14 @@ export default {
 }
 
 .canvas-wrapper {
+  @media (max-width: 1024px) {
+    height: 300px;
+  }
   width: 100vw;
   position: absolute;
   top: 0;
   height: 60vh;
-  /* mobile viewport bug fix */
-  min-height: -webkit-fill-available;
+
   display: block;
   background: linear-gradient(
     90deg,
@@ -134,13 +141,16 @@ export default {
 }
 
 #canvas {
+  @media (max-width: 1024px) {
+    height: 120vh;
+  }
   position: fixed;
   transform: translate3d(0, 0, 0);
   top: -10vh;
   right: 0;
   left: 0;
   height: 120vh;
-  min-height: -webkit-fill-available;
+
   width: 120vw;
   z-index: 1;
   opacity: 0;
@@ -148,6 +158,9 @@ export default {
 }
 
 #textCanvas {
+  @media (max-width: 1024px) {
+    height: 300px;
+  }
   position: fixed;
   top: 0;
   right: 0;
@@ -158,15 +171,21 @@ export default {
 }
 
 .small-plane {
+  @media (max-width: 1024px) {
+    height: 300px;
+  }
   position: absolute;
   top: 0;
   right: 0;
   width: 100vw;
   height: 60vh;
-  min-height: -webkit-fill-available;
 }
 
 .bg-split {
+  @media (max-width: 1024px) {
+    height: 300px;
+  }
+  height: 60vh;
   animation: load 5s ease-in forwards;
   background: rgb(0, 0, 0);
   background: linear-gradient(
