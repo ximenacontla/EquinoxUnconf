@@ -4,15 +4,16 @@
       <hero-curtains :bg="heroBG"></hero-curtains>
     </template>
 
+    <!-- intro section -->
     <div id="unconference" class="my-40">
-      <h1>Equinox Unconference</h1>
-      <span class="subtitle">22nd September 2020</span>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sed sequi, id architecto est obcaecati ipsum accusantium quod aliquam ratione illum, excepturi modi suscipit a eos esse alias ad! Commodi, voluptatem.</p>
+      <h1>{{page.sectionIntro.title}}</h1>
+      <span class="subtitle">{{page.sectionIntro.subtitle}}</span>
+      <p>{{page.sectionIntro.content}}</p>
     </div>
 
-    <!-- intro card example -->
+    <!-- intro cards -->
     <div id="teach" class="card-grid-3">
-      <card v-for="card in cardsIntro" v-bind="card" :key="card.title"></card>
+      <card v-for="card in page.cards.intro" v-bind="card" :key="card.title"></card>
     </div>
 
     <!-- agenda -->
@@ -20,42 +21,22 @@
       <event-container />
     </div>
 
-    <!--  card example -->
-    <div class="card-grid-3">
-      <card v-for="card in cards" v-bind="card" :key="card.title"></card>
+    <!-- example cards -->
+    <div class="card-grid-3 bg-black-900 p-3">
+      <card v-for="card in page.cards.example" v-bind="card" :key="card.title"></card>
     </div>
 
     <div id="share" class="my-40">
+      <!-- share section -->
       <div>
-        <h2>Hats</h2>
-        <span class="subtitle">about the roles</span>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi aut quas recusandae maiores molestias eius. Debitis dolore modi eaque, veniam aliquam reiciendis suscipit ipsam vel quos deserunt sint dolor soluta.</p>
+        <h2>{{page.sectionShare.title}}</h2>
+        <span class="subtitle">{{page.sectionShare.subtitle}}</span>
+        <p>{{page.sectionShare.content}}</p>
       </div>
 
+      <!-- Emoji cards -->
       <div class="card-grid-2 mt-10">
-        <div class="card">
-          <div
-            class="bg-primary-900 w-full h-48 text-6xl flex justify-center items-center"
-          >🧙🧙🏼‍♀️</div>
-          <div class="card-body">
-            <h3 class="mb-4 text-2xl">Space keeper</h3>
-            <div class="mb-4 text-grey-darker text-sm flex-1">
-              <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vitae assumenda reiciendis in id magnam repellendus dolorum eligendi ducimus, dicta tenetur quam aliquid illo perspiciatis odit consequuntur eaque sapiente. Dolor, repellat!</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="card">
-          <div
-            class="border-b border-primary-900 w-full h-48 text-6xl flex justify-center items-center"
-          >⚙️🍄</div>
-          <div class="card-body">
-            <h3 class="mb-4 text-2xl">Tech Hero</h3>
-            <div class="mb-4 text-grey-darker text-sm flex-1">
-              <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vitae assumenda reiciendis in id magnam repellendus dolorum eligendi ducimus, dicta tenetur quam aliquid illo perspiciatis odit consequuntur eaque sapiente. Dolor, repellat!</p>
-            </div>
-          </div>
-        </div>
+        <card v-for="card in page.cards.emoji" v-bind="card" :key="card.title"></card>
       </div>
     </div>
   </LayoutCurtains>
@@ -70,56 +51,89 @@ export default {
   data() {
     return {
       heroBG: "bg.png",
-      cardsIntro: [
-        {
-          title: "Teach",
-          img: "bg.png",
-          link: "/teach/",
+      page: {
+        sectionIntro: {
+          title: "Equinox Unconference",
+          subtitle: "22nd September 2020",
           content:
-            "blanditiis animi sequi beatae nisi facilis maiores voluptate doloribus necessitatibus est laborum vel. Quasi, nisi. ",
+            "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sed sequi, id architecto est obcaecati ipsum accusantium quod aliquam ratione illum, excepturi modi suscipit a eos esse alias ad! Commodi, voluptatem. ",
         },
-        {
-          title: "Learn",
-          img: "mooshed.jpg",
-          extraClassImg: "h-96",
+        sectionShare: {
+          title: "Hats",
+          subtitle: "about the roles",
           content:
-            "blanditiis animi sequi beatae nisi facilis maiores voluptate doloribus necessitatibus est laborum vel. Quasi, nisi. ",
+            "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sed sequi, id architecto est obcaecati ipsum accusantium quod aliquam ratione illum, excepturi modi suscipit a eos esse alias ad! Commodi, voluptatem. ",
+        },
+        cards: {
+          intro: [
+            {
+              title: "Teach",
+              img: "bg.png",
+              link: "/teach/",
+              content:
+                "blanditiis animi sequi beatae nisi facilis maiores voluptate doloribus necessitatibus est laborum vel. Quasi, nisi. ",
+            },
+            {
+              title: "Learn",
+              img: "mooshed.jpg",
+              extraClassImg: "h-96",
+              extraClassHeader: "h-96",
+              link: "#learn",
+            },
 
-          link: "#learn",
-        },
+            {
+              title: "Share",
+              content:
+                "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis neque, mollitia a magni ducimus aliquam blanditiis animi sequi beatae nisi facilis maiores voluptate doloribus necessitatibus est laborum vel. Quasi, nisi. ",
+            },
+          ],
+          example: [
+            {
+              title: "this one has a link",
+              img: "https://picsum.photos/600/300",
+              link: "https://vuejs.org/v2/guide/components-props.html",
+              content:
+                "blanditiis animi sequi beatae nisi facilis maiores voluptate doloribus necessitatibus est laborum vel. Quasi, nisi. ",
+            },
+            {
+              title: "hello world",
+              img: "bg.png",
+              extraClassImg: "h-64",
+              extraClassHeader: "h-64",
+              content:
+                "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis neque, mollitia a magni ducimus aliquam blanditiis animi sequi beatae nisi facilis maiores voluptate doloribus necessitatibus est laborum vel. Quasi, nisi. ",
+            },
 
-        {
-          title: "Share",
-          content:
-            "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis neque, mollitia a magni ducimus aliquam blanditiis animi sequi beatae nisi facilis maiores voluptate doloribus necessitatibus est laborum vel. Quasi, nisi. ",
+            {
+              title: "No image here",
+              content:
+                "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis neque, mollitia a magni ducimus aliquam blanditiis animi sequi beatae nisi facilis maiores voluptate doloribus necessitatibus est laborum vel. Quasi, nisi. ",
+            },
+          ],
+          emoji: [
+            {
+              title: "Space Keeper",
+              emoji: "🧙🧙🏼‍♀️",
+              extraClassHeader: "bg-primary-900",
+              content:
+                "blanditiis animi sequi beatae nisi facilis maiores voluptate doloribus necessitatibus est laborum vel. Quasi, nisi. ",
+            },
+            {
+              title: "Tech Hero",
+              emoji: "⚙️🍄",
+              extraClassHeader: "",
+              content:
+                "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis neque, mollitia a magni ducimus aliquam blanditiis animi sequi beatae nisi facilis maiores voluptate doloribus necessitatibus est laborum vel. Quasi, nisi. ",
+            },
+          ],
         },
-      ],
-      cards: [
-        {
-          title: "this one has a link",
-          img: "https://picsum.photos/600/300",
-          link: "https://vuejs.org/v2/guide/components-props.html",
-          content:
-            "blanditiis animi sequi beatae nisi facilis maiores voluptate doloribus necessitatibus est laborum vel. Quasi, nisi. ",
-        },
-        {
-          title: "hello world",
-          img: "bg.png",
-          extraClassImg: "h-64",
-          content:
-            "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis neque, mollitia a magni ducimus aliquam blanditiis animi sequi beatae nisi facilis maiores voluptate doloribus necessitatibus est laborum vel. Quasi, nisi. ",
-        },
-
-        {
-          title: "No image here",
-          content:
-            "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis neque, mollitia a magni ducimus aliquam blanditiis animi sequi beatae nisi facilis maiores voluptate doloribus necessitatibus est laborum vel. Quasi, nisi. ",
-        },
-      ],
+      },
     };
   },
 };
 </script>
+
+
 
 <style lang="scss">
 </style>
