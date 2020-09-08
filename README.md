@@ -3,10 +3,10 @@
 [Netlify Demo](https://vigorous-ritchie-55cc2e.netlify.app/)
 
 1. Install Gridsome CLI tool if you don't have it: `npm install --global @gridsome/cli`
-2. Clone the repo: `git@github.com:hack-along/gridsome-boilerplate.git`
-3. `gridsome-boilerplate`
+2. Clone the repo: `git@github.com:hack-along/EquinoxUnconf.git`
+3. `cd EquinoxUnconf`
 4. `npm install`
-5. `gridsome develop` to start a local dev server at `http://localhost:8080`
+5. run `gridsome develop` or `npm run dev` to start a local dev server at `http://localhost:8080`
 6. Happy coding 🎉🙌
 
 # Events
