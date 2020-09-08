@@ -87,7 +87,6 @@ export default {
   },
   methods: {
     showElements() {
-      console.log("HEEi");
       let elements = document.getElementsByClassName("hide-before-load");
       let i;
       for (i = 0; i < elements.length; i++) {

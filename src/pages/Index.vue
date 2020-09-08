@@ -83,6 +83,7 @@ export default {
 
             {
               title: "Share",
+              img: "mandelbrotted_color.jpg",
               content:
                 "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis neque, mollitia a magni ducimus aliquam blanditiis animi sequi beatae nisi facilis maiores voluptate doloribus necessitatibus est laborum vel. Quasi, nisi. ",
             },
