@@ -1,6 +1,6 @@
 <template>
   <div class="card" :class="extraClass">
-    <div class="bg-primary-600 w-full" :class="{'h-48' : !img}">
+    <div class="w-full text-6xl flex justify-center items-center" :class="headerClass">
       <g-image
         v-if="img"
         alt="Example image"
@@ -8,6 +8,7 @@
         class="object-cover h-48 w-full"
         :class="extraClassImg"
       />
+      <span>{{emoji}}</span>
     </div>
     <div class="card-body">
       <h3 class="mb-4 text-2xl">{{title}}</h3>
@@ -31,6 +32,9 @@ export default {
     img: {
       required: false,
     },
+    emoji: {
+      required: false,
+    },
     link: {
       required: false,
     },
@@ -43,8 +47,18 @@ export default {
     extraClassImg: {
       required: false,
     },
+    extraClassHeader: {
+      required: false,
+    },
   },
   computed: {
+    headerClass() {
+      let darkBG =
+        !this.img && !this.emoji
+          ? "h-48  bg-primary-900"
+          : " h-48 border-b border-black-900";
+      return this.extraClassHeader ? this.extraClassHeader + darkBG : darkBG;
+    },
     setImage: function () {
       if (
         this.img.indexOf("http://") === 0 ||
