@@ -5,7 +5,7 @@
     <div class="canvas-wrapper overflow-hidden">
       <div class="bg-split w-screen absolute z-20"></div>
       <div id="canvas"></div>
-      <div class="small-plane" id="animated-header">
+      <div class="hide-before-load small-plane" id="animated-header">
         <!-- <img src="img/coho_5.png" alt="mandala" data-sampler="planeTexture" /> -->
         <g-image
           v-if="bg"
@@ -17,7 +17,7 @@
       </div>
     </div>
 
-    <div class="logo z-30 w-100">
+    <div class="hide-before-load logo z-30 w-100">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1590 159">
         <g
           fill="none"
@@ -85,6 +85,16 @@ export default {
       required: false,
     },
   },
+  methods: {
+    showElements() {
+      console.log("HEEi");
+      let elements = document.getElementsByClassName("hide-before-load");
+      let i;
+      for (i = 0; i < elements.length; i++) {
+        elements[i].style.opacity = "1";
+      }
+    },
+  },
   computed: {
     setImage: function () {
       return require("@/assets/img/" + this.bg);
@@ -94,15 +104,17 @@ export default {
     var lineDrawing = anime({
       targets: "path, rect, circle",
       strokeDashoffset: [anime.setDashoffset, 0],
-      easing: "easeInOutCubic",
-      duration: 3000,
+      easing: "easeInCubic",
+      duration: 2000,
       begin: function (anim) {
         document.querySelector("path").setAttribute("stroke", "black");
       },
       complete: function (anim) {},
-      autoplay: true,
+      autoplay: false,
     });
     curtains_settings.initCurtains();
+    this.showElements();
+    lineDrawing.play();
   },
 };
 </script>
@@ -153,8 +165,11 @@ export default {
 
   width: 120vw;
   z-index: 1;
+  animation-fill-mode: forwards;
+  animation-name: load;
+  animation-duration: 4s;
+  animation-delay: 0.3s;
   opacity: 0;
-  animation: load 2s ease-out forwards;
 }
 
 #textCanvas {
@@ -186,8 +201,6 @@ export default {
     height: 300px;
   }
   height: 60vh;
-  animation: load 5s ease-in forwards;
-  background: rgb(0, 0, 0);
   background: linear-gradient(
     90deg,
     rgba(255, 255, 255, 0) 0%,
