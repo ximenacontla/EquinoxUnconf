@@ -4,13 +4,20 @@
       <hero-curtains :bg="heroBG"></hero-curtains>
     </template>
 
-    <!-- intro section -->
+    <!-- intro section using markdown -->
+    <div id="unconference" class="my-40">
+      <h1>{{intro.attributes.title}}</h1>
+      <span class="subtitle">{{intro.attributes.subtitle}}</span>
+      <article class="prose prose-lg max-w-full" v-html="intro.html"></article>
+    </div>
+
+    <!-- example using JSON
     <div id="unconference" class="my-40">
       <h1>{{page.sectionIntro.title}}</h1>
       <span class="subtitle">{{page.sectionIntro.subtitle}}</span>
-      <!-- <p>{{page.sectionIntro.content}}</p> -->
       <article class="prose prose-lg max-w-full" v-html="page.sectionIntro.content"></article>
     </div>
+    -->
 
     <!-- intro cards -->
     <div id="teach" class="card-grid-3">
@@ -44,13 +51,14 @@
 </template>
 
 <script>
+import intro from "../../content/page/index/intro.md";
 export default {
   metaInfo: {
     title: "Equinox",
   },
-
   data() {
     return {
+      intro: intro,
       heroBG: "bg.png",
       page: {
         sectionIntro: {
