@@ -10,7 +10,6 @@
       <span class="subtitle">{{intro.attributes.subtitle}}</span>
       <article class="prose prose-lg max-w-full" v-html="intro.html"></article>
     </div>
-
     <!-- example using JSON
     <div id="unconference" class="my-40">
       <h1>{{page.sectionIntro.title}}</h1>
@@ -52,6 +51,7 @@
 
 <script>
 import intro from "../../content/page/index/intro.md";
+import teach from "../../content/page/index/teach.md";
 export default {
   metaInfo: {
     title: "Equinox",
@@ -92,10 +92,10 @@ export default {
         cards: {
           intro: [
             {
-              title: "Teach",
+              title: teach.attributes.title,
               img: "bg.png",
               link: "/teach/",
-              content: `In an open space you’ll share with a diverse but interesting group. Feel free to interact during sessions, contribute to another one’s journey by sharing your stories, or simply jump in and organise your own session. We are open to all kind of contributions. Take a look at the program (linkto) to find out more.`,
+              content: teach.html,
             },
             {
               title: "Learn",
