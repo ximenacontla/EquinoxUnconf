@@ -8,7 +8,8 @@
     <div id="unconference" class="my-40">
       <h1>{{page.sectionIntro.title}}</h1>
       <span class="subtitle">{{page.sectionIntro.subtitle}}</span>
-      <p>{{page.sectionIntro.content}}</p>
+      <!-- <p>{{page.sectionIntro.content}}</p> -->
+      <article class="prose prose-lg max-w-full" v-html="page.sectionIntro.content"></article>
     </div>
 
     <!-- intro cards -->
@@ -55,8 +56,24 @@ export default {
         sectionIntro: {
           title: "Equinox Unconference",
           subtitle: "22nd September 2020",
-          content:
-            "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sed sequi, id architecto est obcaecati ipsum accusantium quod aliquam ratione illum, excepturi modi suscipit a eos esse alias ad! Commodi, voluptatem. ",
+          content: `<blockquote>On a beautiful moon’s night we will join around the bonfire and share our stories</blockquote>
+        <p>Equinox is that moment when day and night, sun and moon, shine and shade fall into balance together all over the world. Paradoxically, the transition of solar to lunar energy is also at its highest potential and most dynamic capacity - from Autumn Equinox onwards we accelerate towards night.</p>
+        <p>Paradoxically the equinox also signifies the transition of solar to lunar energy at it’s most dynamic moment, full of potential.</p>
+        <h3>When two tribes meet</h3>
+        <p>
+          On this autumn equinox, two tribes,
+          <span>
+            <g-link title="hackalong" to="http://hackalong.io/">the moon people</g-link>
+          </span> and the fire people (link to bonfire?) will join to teach, learn and share their stories.
+          Want to know what it feels like to be part of a self-organising participatory commons? Join us in cocreating a self-hosted unconference this autum equinox on September 22nd..
+          Within this year’s tale we’ll explore nature’s power to self-organise (bio-mimicry) and look for social innovation to implement
+          <span>
+            <g-link
+              title="hackalong"
+              to="https://handbook.hackalong.io/patterns/cocreation"
+            >new patterns of collaboration and co-creation</g-link>
+          </span>.
+        </p>`,
         },
         sectionShare: {
           title: "Hats",
@@ -70,8 +87,7 @@ export default {
               title: "Teach",
               img: "bg.png",
               link: "/teach/",
-              content:
-                "blanditiis animi sequi beatae nisi facilis maiores voluptate doloribus necessitatibus est laborum vel. Quasi, nisi. ",
+              content: `In an open space you’ll share with a diverse but interesting group. Feel free to interact during sessions, contribute to another one’s journey by sharing your stories, or simply jump in and organise your own session. We are open to all kind of contributions. Take a look at the program (linkto) to find out more.`,
             },
             {
               title: "Learn",
