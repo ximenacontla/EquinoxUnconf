@@ -10,6 +10,7 @@
       <span class="subtitle">{{intro.attributes.subtitle}}</span>
       <article class="prose prose-lg max-w-full" v-html="intro.html"></article>
     </div>
+
     <!-- example using JSON
     <div id="unconference" class="my-40">
       <h1>{{page.sectionIntro.title}}</h1>
@@ -84,12 +85,10 @@ export default {
         cards: {
           intro: [
             {
-              title: "Teach",
+              title: teach.attributes.title,
               img: "mandelbrotted_color.jpg",
               link: "#teach",
-              content: `Share an experience of open space with a diverse and interesting group that are cocreating and organising themselves around a shared collection of narratives. 
-                        Feel free to interact during sessions and contribute to eachothers journey by sharing stories and ideas together, or simply jump in and organise your own session. 
-                        We are open to all kinds of contribution. Please take a look at the [program](link) to get an idea of who other attendees are and the discussions they are contributing.`,
+              content: teach.html,
             },
             {
               title: "Learn",

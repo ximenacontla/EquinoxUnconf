@@ -15,7 +15,7 @@
 
       <div class="mb-4 text-grey-darker text-sm flex-1" v-html="content"></div>
 
-      <a v-if="link" :href="link" class="uppercase text-primary self-end stretched-link">learn more</a>
+      <a v-if="link" :href="link" class="uppercase text-primary self-end">learn more</a>
     </div>
   </div>
 </template>
