@@ -19,6 +19,7 @@ import TagNav from '~/components/TagNav.vue'
 
 import ThankYou from '~/components/ThankYouContainer.vue'
 
+import IndexPage from '~/pages/Index.vue'
 
 
 
@@ -33,6 +34,8 @@ export default function (Vue, {
   Vue.component('LayoutHero', HeroLayout)
   Vue.component('LayoutCurtains', CurtainsLayout)
 
+
+  Vue.component('IndexPage', IndexPage)
 
   //add page parts as default components
   Vue.component('nav-bar', NavBar)

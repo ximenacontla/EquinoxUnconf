@@ -6,6 +6,7 @@
 
 const tailwind = require('tailwindcss')
 const purgecss = require('@fullhuman/postcss-purgecss')
+const Mode = require('frontmatter-markdown-loader/mode')
 
 const postcssPlugins = [
   tailwind(),
@@ -50,4 +51,17 @@ module.exports = {
       },
     },
   },
+  chainWebpack: config => {
+    config.module
+      .rule('markdown')
+      .test(/\.md$/)
+      .use('frontmatter-markdown-loader')
+      .loader('frontmatter-markdown-loader')
+      .tap(options => {
+        return {
+          mode: [Mode.HTML]
+        }
+      })
+  }
+
 }
