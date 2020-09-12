@@ -4,158 +4,111 @@
       <hero-curtains :bg="heroBG"></hero-curtains>
     </template>
 
-    <!-- intro section using markdown -->
+    <!-- intro section using grapQL -->
     <div id="unconference" class="my-40">
-      <h1>{{intro.attributes.title}}</h1>
-      <span class="subtitle">{{intro.attributes.subtitle}}</span>
-      <article class="prose prose-lg max-w-full" v-html="intro.html"></article>
+      <h1>{{page.intro.title}}</h1>
+      <span class="subtitle">{{page.intro.subtitle}}</span>
+      <article class="prose prose-lg max-w-full" v-html="page.intro.content"></article>
     </div>
-
-    <!-- example using JSON
-    <div id="unconference" class="my-40">
-      <h1>{{page.sectionIntro.title}}</h1>
-      <span class="subtitle">{{page.sectionIntro.subtitle}}</span>
-      <article class="prose prose-lg max-w-full" v-html="page.sectionIntro.content"></article>
-    </div>
-    -->
 
     <!-- intro cards -->
-    <div id="teach" class="card-grid-3">
-      <card v-for="card in page.cards.intro" v-bind="card" :key="card.title"></card>
+    <div v-if="page.card" id="teach" class="card-grid-3">
+      <card v-if="page.card.teach" v-bind="page.card.teach"></card>
+      <card v-if="page.card.learn" v-bind="page.card.learn"></card>
+      <card v-if="page.card.share" v-bind="page.card.share"></card>
     </div>
 
     <!-- agenda -->
     <div id="learn" class="flex flex-wrap my-40">
+      <!-- the events are dynamically added from the /content/events files -->
       <event-container />
     </div>
 
     <!-- example cards -->
     <div class="card-grid-3 bg-black-900 p-3">
-      <card v-for="card in page.cards.example" v-bind="card" :key="card.title"></card>
+      <card v-bind="page.card.example" :key="page.card.example.title"></card>
     </div>
 
     <div id="share" class="my-40">
       <!-- share section -->
       <div>
-        <h2>{{page.sectionShare.title}}</h2>
-        <span class="subtitle">{{page.sectionShare.subtitle}}</span>
-        <p>{{page.sectionShare.content}}</p>
+        <h2>{{page.share.title}}</h2>
+        <span class="subtitle">{{page.share.subtitle}}</span>
+        <article class="prose max-w-full" v-html="page.share.content"></article>
       </div>
 
       <!-- Emoji cards -->
-      <div class="card-grid-2 mt-10">
-        <card v-for="card in page.cards.emoji" v-bind="card" :key="card.title"></card>
+      <div v-if="page.card" id="teach" class="card-grid-2 mt-10">
+        <card v-if="page.card.role1" v-bind="page.card.role1"></card>
+        <card v-if="page.card.role2" v-bind="page.card.role2"></card>
       </div>
     </div>
   </LayoutCurtains>
 </template>
 
+<static-query>
+query HomeTemp {
+  data: allHomeTemp {
+    edges {
+      node {
+          title
+          subtitle
+          img
+          content
+          link
+          emoji
+          extraClass
+          tags
+          extraClassImg
+          extraClassHeader
+          fileName
+      }
+    }
+  }
+}
+</static-query>
 <script>
-import intro from "../../content/page/index/intro.md";
-import teach from "../../content/page/index/teach.md";
 export default {
   metaInfo: {
     title: "Equinox",
   },
   data() {
     return {
-      intro: intro,
       heroBG: "bg.png",
-      page: {
-        sectionIntro: {
-          title: "Equinox Unconference",
-          subtitle: "22nd September 2020",
-          content: `Equinox is a special moment when day and night, sun and moon, shine and shade all fall into balance together across the world as yin meets yang. 
-                    Paradoxically, in this synchronisation, the transition of solar to lunar energy is at its highest potential and most dynamic capacity - from Autumn Equinox onwards we accelerate towards night.
-                    
-                    <p></p>
-                    What better time to gather around the bonfire together and hold an annual self-organising unconference?
-                    
-                    <p></p>
-                    <h4> An invitation </h4>
-                    
-                    Get involved - join us in cocreating a self-hosted and participatory unconference this Autum Equinox, September 22nd.`,
-        },
-        sectionShare: {
-          title: "Hats",
-          subtitle: "about the roles",
-          content:
-            "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sed sequi, id architecto est obcaecati ipsum accusantium quod aliquam ratione illum, excepturi modi suscipit a eos esse alias ad! Commodi, voluptatem. ",
-        },
-        cards: {
-          intro: [
-            {
-              title: teach.attributes.title,
-              img: "mandelbrotted_color.jpg",
-              link: "#teach",
-              content: teach.html,
-            },
-            {
-              title: "Learn",
-              img: "bg.png",
-              link: "#learn",
-              content: `Want to experience what a [self-organising](https://handbook.hackalong.io/patterns/cocreation) participatory space feels like? 
-                        Gather around the digital bonfire with us as an [attendee](page_about_open_space?), hopefully the discussion will warm you up enough participate. 
-                        Sessions are available [here](link_to_program). 
-                        You can also sign-up and get a free ticket [here](link_to_tickets)`,
-            },
-            {
-              title: "Share",
-              img: "mooshed.jpg",
-              content: `Grab a spade and come community gardening - your help is most welcome! 
-                Volunteering to share your intentions and attention with us in any way is appreciated and we've thought of a variety of ways that people can contribute. 
-                For instance we need spacekeepers (linkto) and tech hero's (linkto) but creativity to contribute in any way you like is encouraged and most appreciated.
-
-                In that spirit, please drop in to the [Discord channel](https://discord.gg/CTPJTNu) if your up for digging a few holes with us - be they self determined or just something thats on a [list](things_to_do)!`,
-            },
-          ],
-          example: [
-            {
-              title: "this one has a link",
-              img: "https://picsum.photos/600/300",
-              link: "https://vuejs.org/v2/guide/components-props.html",
-              content:
-                "blanditiis animi sequi beatae nisi facilis maiores voluptate doloribus necessitatibus est laborum vel. Quasi, nisi. ",
-            },
-            {
-              title: "hello world",
-              img: "bg.png",
-              extraClassImg: "h-64",
-              extraClassHeader: "h-64",
-              content:
-                "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis neque, mollitia a magni ducimus aliquam blanditiis animi sequi beatae nisi facilis maiores voluptate doloribus necessitatibus est laborum vel. Quasi, nisi. ",
-            },
-
-            {
-              title: "No image here",
-              content:
-                "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis neque, mollitia a magni ducimus aliquam blanditiis animi sequi beatae nisi facilis maiores voluptate doloribus necessitatibus est laborum vel. Quasi, nisi. ",
-            },
-          ],
-          emoji: [
-            {
-              title: "Space Keeper",
-              emoji: "🧙🧙🏼‍♀️",
-              extraClassHeader: "bg-primary-900",
-              content:
-                "blanditiis animi sequi beatae nisi facilis maiores voluptate doloribus necessitatibus est laborum vel. Quasi, nisi. ",
-            },
-            {
-              title: "Tech Hero",
-              emoji: "⚙️🍄",
-              extraClassHeader: "",
-              content:
-                "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis neque, mollitia a magni ducimus aliquam blanditiis animi sequi beatae nisi facilis maiores voluptate doloribus necessitatibus est laborum vel. Quasi, nisi. ",
-            },
-          ],
-        },
-      },
     };
+  },
+  methods: {
+    splitString(string, node) {
+      let name = string.split("_");
+      let resultString = {};
+      let count = name.length;
+      if (count > 1) {
+        resultString = {};
+        for (var i = 1; i < count; i++) {
+          resultString[name[i]] = node;
+        }
+      } else {
+        resultString = node;
+      }
+      return [name[0], resultString];
+    },
+  },
+  computed: {
+    page() {
+      let cleanData = {};
+      this.$static.data.edges.map((elem) => {
+        let prop = elem.node.fileName;
+        let object = this.splitString(prop, elem.node);
+        if (cleanData.hasOwnProperty(object[0])) {
+          Object.assign(cleanData[object[0]], object[1]);
+        } else {
+          cleanData[object[0]] = object[1];
+        }
+      });
+      return cleanData;
+    },
   },
 };
 </script>
 
 
-
-<style lang="scss">
-</style>
