@@ -8,7 +8,8 @@
 module.exports = function (api) {
   api.loadSource(({
     addCollection,
-    addSchemaTypes
+    addSchemaTypes,
+    addSchemaResolvers
   }) => {
 
     addSchemaTypes(`
@@ -22,6 +23,30 @@ module.exports = function (api) {
       
     }
   `)
+    addSchemaTypes(`
+    type HomeTemp implements Node @infer {
+      title: String,
+      subtitle: String,
+      content: String,
+      img: String,
+      link: String,
+      emoji: String,
+      extraClass: String,
+      tags: String,
+      extraClassImg: String,
+      extraClassHeader: String,  
+    }
+  `)
+    addSchemaResolvers({
+      HomeTemp: {
+        fileName: {
+          type: 'String',
+          resolve(obj) {
+            return `${obj.fileInfo.name}`
+          }
+        }
+      }
+    })
   })
 
   api.createPages(({

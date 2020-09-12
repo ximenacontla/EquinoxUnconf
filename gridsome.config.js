@@ -38,6 +38,15 @@ module.exports = {
       }
     },
     {
+      use: '@gridsome/source-filesystem',
+      options: {
+        typeName: 'HomeTemp',
+        baseDir: './content/page/index',
+        pathPrefix: '/content',
+        path: '*.md',
+      }
+    },
+    {
       use: `gridsome-plugin-netlify-cms`,
       options: {
         publicPath: `/admin`
