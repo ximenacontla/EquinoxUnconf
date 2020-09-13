@@ -6,7 +6,6 @@
 
 const tailwind = require('tailwindcss')
 const purgecss = require('@fullhuman/postcss-purgecss')
-const Mode = require('frontmatter-markdown-loader/mode')
 
 const postcssPlugins = [
   tailwind(),
@@ -38,6 +37,15 @@ module.exports = {
       }
     },
     {
+      use: '@gridsome/vue-remark',
+      options: {
+        typeName: 'MdPage', // Required
+        baseDir: './content/page', // Where .md files are located
+        pathPrefix: '/', // Add route prefix. Optional
+        template: './src/templates/Page.vue', // Optional
+      }
+    },
+    {
       use: '@gridsome/source-filesystem',
       options: {
         typeName: 'HomeTemp',
@@ -59,18 +67,5 @@ module.exports = {
         plugins: postcssPlugins,
       },
     },
-  },
-  chainWebpack: config => {
-    config.module
-      .rule('markdown')
-      .test(/\.md$/)
-      .use('frontmatter-markdown-loader')
-      .loader('frontmatter-markdown-loader')
-      .tap(options => {
-        return {
-          mode: [Mode.HTML]
-        }
-      })
   }
-
 }
