@@ -20,7 +20,7 @@
 
 <static-query>
 query Event {
-  events: allEvent {
+  events: allEvent(sort:[ {by: "date", order:ASC}, {by:"start_time", order:ASC}] ) {
     edges {
       node {
         title
