@@ -12,7 +12,7 @@
       <span>{{emoji}}</span>
     </div>
     <div class="card-body">
-      <h3 class="mb-4 text-2xl">{{title}}</h3>
+      <h2 class="mb-4 text-2xl">{{title}}</h2>
 
       <div class="mb-4 text-grey-darker text-sm flex-1" v-html="content"></div>
 
