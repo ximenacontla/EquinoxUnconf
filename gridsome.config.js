@@ -49,9 +49,9 @@ module.exports = {
     {
       use: '@gridsome/source-filesystem',
       options: {
-        typeName: 'HomeTemp',
-        baseDir: './content/page/index',
-        pathPrefix: '/content',
+        typeName: 'Blocks',
+        baseDir: './content/blocks',
+        pathPrefix: '/blocks',
         path: '*.md',
       }
     },

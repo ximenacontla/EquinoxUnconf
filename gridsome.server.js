@@ -32,7 +32,7 @@ module.exports = function (api) {
     }
   `)
     addSchemaTypes(`
-    type HomeTemp implements Node @infer {
+    type Blocks implements Node @infer {
       title: String,
       subtitle: String,
       content: String,
@@ -46,7 +46,7 @@ module.exports = function (api) {
     }
   `)
     addSchemaResolvers({
-      HomeTemp: {
+      Blocks: {
         fileName: {
           type: 'String',
           resolve(obj) {
