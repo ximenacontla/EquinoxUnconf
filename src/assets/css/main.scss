@@ -94,7 +94,7 @@ html {
 }
 
 .card-grid-3 {
-    @apply grid gap-3 grid-cols-1 my-40;
+    @apply grid gap-3 grid-cols-1;
 
     @media (min-width: 768px) {
         @apply grid-cols-2

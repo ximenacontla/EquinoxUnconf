@@ -12,7 +12,7 @@
     </div>
 
     <!-- intro cards -->
-    <div v-if="page.card" id="teach" class="card-grid-3">
+    <div v-if="page.card" id="teach" class="card-grid-3 my-40">
       <card v-if="page.card.teach" v-bind="page.card.teach"></card>
       <card v-if="page.card.learn" v-bind="page.card.learn"></card>
       <card v-if="page.card.share" v-bind="page.card.share"></card>
@@ -25,7 +25,7 @@
     </div>
 
     <!-- example cards -->
-    <div class="card-grid-3 bg-black-900 p-3">
+    <div class="card-grid-3 bg-black-900 p-3 my-40">
       <card v-bind="page.card.example" :key="page.card.example.title"></card>
     </div>
 
@@ -41,6 +41,13 @@
       <div v-if="page.card" id="teach" class="card-grid-2 mt-10">
         <card v-if="page.card.role1" v-bind="page.card.role1"></card>
         <card v-if="page.card.role2" v-bind="page.card.role2"></card>
+      </div>
+      <h2 class="mt-20">Signals</h2>
+      <span class="subtitle">some experiments</span>
+      <div class="card-grid-3 my-10">
+        <sprite :title="'Feel'" :img="'feel.jpg'"></sprite>
+        <sprite :img="'gotit.jpg'"></sprite>
+        <sprite :img="'move.jpg'"></sprite>
       </div>
     </div>
   </LayoutCurtains>

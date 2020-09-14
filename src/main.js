@@ -20,6 +20,8 @@ import TagNav from '~/components/TagNav.vue'
 import ThankYou from '~/components/ThankYouContainer.vue'
 
 import IndexPage from '~/pages/Index.vue'
+import Sprite from '~/components/Sprite.vue'
+
 
 
 
@@ -53,8 +55,10 @@ export default function (Vue, {
   Vue.component('tag-nav', TagNav)
 
   // credits 
-
   Vue.component('thank-you', ThankYou)
+
+  //animation
+  Vue.component('sprite', Sprite)
 
   //initilize other plugins
   Vue.use(VueScrollTo, {
