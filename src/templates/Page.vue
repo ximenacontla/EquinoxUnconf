@@ -72,8 +72,7 @@ export default {
     },
     editLink() {
       let path = this.currentPath;
-      if ((path.match(new RegExp("/", "g")) || []).length == 1)
-        path = path + "/README";
+
       return `https://github.com/hack-along/EquinoxUnconf/tree/master/content/page${path}.md`;
     },
   },
