@@ -32,7 +32,7 @@ export default {
       return require("@/assets/img/sprites/" + this.img);
     },
     sprites() {
-      return `background: url("assets/img/${this.img}") left center; background-size: auto 100%;
+      return `background: url("${this.setImage}") left center; background-size: auto 100%;
 `;
     },
   },
