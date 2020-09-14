@@ -16,7 +16,7 @@
 
       <div class="mb-4 text-grey-darker text-sm flex-1" v-html="content"></div>
 
-      <g-link v-if="link" :to="link" class="uppercase text-primary self-end">learn more</g-link>
+      <g-link v-if="link" :to="link" class="uppercase self-end">learn more</g-link>
     </div>
   </div>
 </template>
