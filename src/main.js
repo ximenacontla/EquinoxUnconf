@@ -118,7 +118,9 @@ export default function (Vue, {
     key: 'twitter:description',
     name: 'twitter:description',
     content: `Equinox Unconference`,
+
   })
+
 
 
 }

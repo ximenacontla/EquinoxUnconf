@@ -63,7 +63,7 @@ export default {
   computed: {
     getCoverImage() {
       // @TODO: ADD A CARD FALLBACK IMG
-      return this.$static.metadata.siteUrl + "/assets/img/bg.png";
+      return this.$static.metadata.siteUrl + "card.jpg";
     },
     getUrl() {
       return this.$static.metadata.siteUrl + this.$page.mdPage.path;
