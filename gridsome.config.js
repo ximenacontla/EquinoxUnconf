@@ -15,6 +15,7 @@ if (process.env.NODE_ENV === 'production') postcssPlugins.push(purgecss(require(
 
 module.exports = {
   siteName: 'Equinox Unconference',
+  siteDescription: "22 Sep 2020 Fall Equinox Unconference",
   templates: {
     Tag: [{
       path: '/event/tag/:title',
