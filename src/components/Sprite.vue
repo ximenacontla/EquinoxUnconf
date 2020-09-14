@@ -32,7 +32,7 @@ export default {
       return require("@/assets/img/sprites/" + this.img);
     },
     sprites() {
-      return `background: url("${this.setImage}") left center; background-size: auto 100%;
+      return `background: url("/sprites/${this.img}") left center; background-size: auto 100%;
 `;
     },
   },
@@ -52,6 +52,7 @@ export default {
 .sprite-content {
   width: auto;
   height: 100%;
+
   &:hover {
     animation: play 0.5s steps(3) infinite;
   }
