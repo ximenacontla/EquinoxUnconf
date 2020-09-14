@@ -16,6 +16,7 @@ if (process.env.NODE_ENV === 'production') postcssPlugins.push(purgecss(require(
 module.exports = {
   siteName: 'Equinox Unconference',
   siteDescription: "22 Sep 2020 Fall Equinox Unconference",
+  siteUrl: "https://vigorous-ritchie-55cc2e.netlify.app/",
   templates: {
     Tag: [{
       path: '/event/tag/:title',

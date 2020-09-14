@@ -49,10 +49,10 @@ export default {
         { name: "twitter:card", content: "summary_large_image" },
         {
           name: "twitter:title",
-          content: this.$page.mdPage.title + " | " + this.$static.siteName,
+          content:
+            this.$page.mdPage.title + " | " + this.$static.metadata.siteName,
         },
         { name: "twitter:image", content: this.getCoverImage },
-        { name: "og:description", content: this.$page.mdPage.excerpt },
         { name: "og:title", content: this.$page.mdPage.title },
         { name: "og:url", content: this.getUrl },
         { name: "og:image", content: this.getCoverImage },
