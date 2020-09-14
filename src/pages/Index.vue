@@ -87,7 +87,6 @@ export default {
         { name: "og:url", content: this.getUrl },
         { name: "og:image", content: this.getCoverImage },
       ],
-      script: [{ src: "https://platform.twitter.com/widgets.js", async: true }],
     };
   },
   data() {

@@ -21,8 +21,9 @@ h3 {
 }
 
 a {
-    @apply text-accent-500;
+    @apply text-accent-600;
     transition: color 0.1s ease-out;
+    font-weight: 500;
 
     &:hover {
         @apply text-secondary-500;

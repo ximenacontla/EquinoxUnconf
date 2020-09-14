@@ -86,7 +86,7 @@ nav {
     &:hover,
     &:focus,
     &.active--exact {
-      @apply text-accent-500;
+      @apply text-accent-600;
     }
   }
 }

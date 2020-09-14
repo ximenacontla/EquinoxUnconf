@@ -7,7 +7,7 @@
       </dt>
       <dd class="col-span-2 lg:col-span-3" :key="index">
         <g-link :to="event.node.path">
-          <h5 class="mb-2 text-2xl">{{ event.node.title }}</h5>
+          <h3 class="mb-2 text-2xl">{{ event.node.title }}</h3>
         </g-link>
         <p class="mb-4 flex-1">{{ event.node.excerpt }}</p>
       </dd>

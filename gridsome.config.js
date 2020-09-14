@@ -16,6 +16,10 @@ if (process.env.NODE_ENV === 'production') postcssPlugins.push(purgecss(require(
 module.exports = {
   siteName: 'Equinox Unconference',
   siteDescription: "22 Sep 2020 Fall Equinox Unconference",
+  icon: {
+    favicon: "src/favicon.png",
+    touchicon: "src/assets/images/meta/favicon.png",
+  },
   templates: {
     Tag: [{
       path: '/event/tag/:title',
@@ -60,6 +64,24 @@ module.exports = {
       options: {
         publicPath: `/admin`
       }
+    },
+    {
+      use: "gridsome-plugin-pwa",
+      options: {
+        title: "Equinox Unconference",
+        startUrl: "/",
+        display: "minimal-UI",
+        statusBarStyle: "default",
+        manifestPath: "manifest.json",
+        serviceWorkerPath: "service-worker.js",
+        shortName: "Equinox Unconference",
+        themeColor: "#fd0719",
+        backgroundColor: "#ffffff",
+        purpose: "maskable",
+        icon: "src/favicon.png",
+        msTileImage: "src/favicon.png",
+        msTileColor: "#fd0719",
+      }
     }
   ],
   css: {
@@ -68,5 +90,15 @@ module.exports = {
         plugins: postcssPlugins,
       },
     },
-  }
+  },
+  transformers: {
+    remark: {
+      externalLinksTarget: '_blank',
+      externalLinksRel: ['nofollow', 'noopener', 'noreferrer'],
+    }
+  },
+
+
+
+
 }
