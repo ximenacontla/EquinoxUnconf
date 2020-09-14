@@ -80,8 +80,10 @@ export default {
       title: "Equinox",
       meta: [
         // twitter-card: https://cards-dev.twitter.com/validator
+        { name: "twitter:title", content: "Equinox Unconference" },
         { name: "twitter:card", content: "summary_large_image" },
         { name: "twitter:image", content: this.getCoverImage },
+        { name: "og:title", content: "Equinox Unconference" },
         { name: "og:url", content: this.getUrl },
         { name: "og:image", content: this.getCoverImage },
       ],
@@ -112,7 +114,7 @@ export default {
   computed: {
     getCoverImage() {
       // @TODO: ADD A CARD FALLBACK IMG
-      return this.$static.metadata.siteUrl + "/assets/img/bg.png";
+      return this.$static.metadata.siteUrl + "/assets/img/card.jpg";
     },
     getUrl() {
       return this.$static.metadata.siteUrl;
