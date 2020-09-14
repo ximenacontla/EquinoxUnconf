@@ -68,5 +68,11 @@ module.exports = {
         plugins: postcssPlugins,
       },
     },
-  }
+  },
+  transformers: {
+    remark: {
+      externalLinksTarget: '_blank',
+      externalLinksRel: ['nofollow', 'noopener', 'noreferrer'],
+    }
+  },
 }
