@@ -114,7 +114,7 @@ export default {
   computed: {
     getCoverImage() {
       // @TODO: ADD A CARD FALLBACK IMG
-      return this.$static.metadata.siteUrl + "/assets/img/card.jpg";
+      return this.$static.metadata.siteUrl + "assets/img/card.jpg";
     },
     getUrl() {
       return this.$static.metadata.siteUrl;
