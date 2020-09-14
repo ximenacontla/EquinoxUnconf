@@ -23,6 +23,7 @@
   },
   "devDependencies": {
     "@fullhuman/postcss-purgecss": "^2.3.0",
+    "gridsome-plugin-pwa": "0.0.18",
     "node-sass": "^4.14.1",
     "sass-loader": "^8.0.2"
   }
