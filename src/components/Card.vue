@@ -3,10 +3,11 @@
     <div class="w-full text-6xl flex justify-center items-center" :class="headerClass">
       <g-image
         v-if="img"
-        alt="Example image"
+        :alt="title"
         :src="setImage"
         class="object-cover h-48 w-full"
         :class="extraClassImg"
+        width="600"
       />
       <span>{{emoji}}</span>
     </div>
@@ -15,7 +16,7 @@
 
       <div class="mb-4 text-grey-darker text-sm flex-1" v-html="content"></div>
 
-      <a v-if="link" :href="link" class="uppercase text-primary self-end">learn more</a>
+      <g-link v-if="link" :to="link" class="uppercase text-primary self-end">learn more</g-link>
     </div>
   </div>
 </template>
