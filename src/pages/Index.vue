@@ -64,13 +64,29 @@ query HomeTemp {
           fileName
       }
     }
+  },
+    metadata {
+    siteName
+    siteUrl
   }
 }
 </static-query>
+
+
 <script>
 export default {
-  metaInfo: {
-    title: "Equinox",
+  metaInfo() {
+    return {
+      title: "Equinox",
+      meta: [
+        // twitter-card: https://cards-dev.twitter.com/validator
+        { name: "twitter:card", content: "summary_large_image" },
+        { name: "twitter:image", content: this.getCoverImage },
+        { name: "og:url", content: this.getUrl },
+        { name: "og:image", content: this.getCoverImage },
+      ],
+      script: [{ src: "https://platform.twitter.com/widgets.js", async: true }],
+    };
   },
   data() {
     return {
@@ -94,6 +110,13 @@ export default {
     },
   },
   computed: {
+    getCoverImage() {
+      // @TODO: ADD A CARD FALLBACK IMG
+      return this.$static.metadata.siteUrl + "/assets/img/bg.png";
+    },
+    getUrl() {
+      return this.$static.metadata.siteUrl;
+    },
     page() {
       let cleanData = {};
       this.$static.data.edges.map((elem) => {

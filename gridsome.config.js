@@ -6,7 +6,6 @@
 
 const tailwind = require('tailwindcss')
 const purgecss = require('@fullhuman/postcss-purgecss')
-const Mode = require('frontmatter-markdown-loader/mode')
 
 const postcssPlugins = [
   tailwind(),
@@ -16,6 +15,7 @@ if (process.env.NODE_ENV === 'production') postcssPlugins.push(purgecss(require(
 
 module.exports = {
   siteName: 'Equinox Unconference',
+  siteDescription: "22 Sep 2020 Fall Equinox Unconference",
   templates: {
     Tag: [{
       path: '/event/tag/:title',
@@ -35,6 +35,15 @@ module.exports = {
             create: true
           }
         },
+      }
+    },
+    {
+      use: '@gridsome/vue-remark',
+      options: {
+        typeName: 'MdPage', // Required
+        baseDir: './content/page', // Where .md files are located
+        pathPrefix: '/', // Add route prefix. Optional
+        template: './src/templates/Page.vue', // Optional
       }
     },
     {
@@ -59,18 +68,5 @@ module.exports = {
         plugins: postcssPlugins,
       },
     },
-  },
-  chainWebpack: config => {
-    config.module
-      .rule('markdown')
-      .test(/\.md$/)
-      .use('frontmatter-markdown-loader')
-      .loader('frontmatter-markdown-loader')
-      .tap(options => {
-        return {
-          mode: [Mode.HTML]
-        }
-      })
   }
-
 }

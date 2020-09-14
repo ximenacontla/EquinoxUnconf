@@ -13,7 +13,15 @@ module.exports = function (api) {
   }) => {
 
     addSchemaTypes(`
+    type MdPage implements Node @infer {
+      id: ID!,
+      title: String,      
+    }
+  `)
+
+    addSchemaTypes(`
     type Event implements Node @infer {
+      id: ID!,
       title: String,
       excerpt: String,
       date: String,
