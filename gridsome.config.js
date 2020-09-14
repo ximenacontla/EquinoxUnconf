@@ -49,9 +49,9 @@ module.exports = {
     {
       use: '@gridsome/source-filesystem',
       options: {
-        typeName: 'HomeTemp',
-        baseDir: './content/page/index',
-        pathPrefix: '/content',
+        typeName: 'Blocks',
+        baseDir: './content/blocks',
+        pathPrefix: '/blocks',
         path: '*.md',
       }
     },
@@ -61,24 +61,25 @@ module.exports = {
         publicPath: `/admin`
       }
     },
-    // {
-    //   use: "gridsome-plugin-pwa",
-    //   options: {
-    //     title: "Equinox Unconference",
-    //     startUrl: "/",
-    //     display: "minimal-UI",
-    //     statusBarStyle: "default",
-    //     manifestPath: "manifest.json",
-    //     serviceWorkerPath: "service-worker.js",
-    //     shortName: "Equinox Unconference",
-    //     themeColor: "#fd0719",
-    //     backgroundColor: "#ffffff",
-    //     purpose: "maskable",
-    //     icon: "./static/favicon-96x96.png",
-    //     msTileImage: "src/favicon.png",
-    //     msTileColor: "#fd0719",
-    //   }
-    // }
+    {
+      use: "gridsome-plugin-pwa",
+      options: {
+        title: "Equinox Unconference",
+        startUrl: "/",
+        display: "minimal-UI",
+        statusBarStyle: "default",
+        manifestPath: "manifest.json",
+        serviceWorkerPath: "service-worker.js",
+        shortName: "Equinox Unconference",
+        themeColor: "#fd0719",
+        backgroundColor: "#ffffff",
+        purpose: "maskable",
+        icon: "src/favicon.png",
+        svgFavicon: 'favicon.svg',
+        msTileImage: "src/favicon.png",
+        msTileColor: "#fd0719",
+      }
+    }
 
   ],
   css: {

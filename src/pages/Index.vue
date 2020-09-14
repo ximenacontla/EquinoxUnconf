@@ -47,8 +47,8 @@
 </template>
 
 <static-query>
-query HomeTemp {
-  data: allHomeTemp {
+query Blocks {
+  data: allBlocks {
     edges {
       node {
           title
