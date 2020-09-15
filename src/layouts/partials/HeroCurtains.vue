@@ -96,7 +96,7 @@ export default {
   },
   computed: {
     setImage: function () {
-      return require("@/assets/img/" + this.bg);
+      return require(`!!assets-loader!@images/${this.bg}`);
     },
   },
   mounted() {

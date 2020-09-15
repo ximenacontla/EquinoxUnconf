@@ -1,6 +1,6 @@
 ---
 title: "hello world"
-img: "bg.png"
+img: "fractal.jpg"
 extraClassImg: "h-64"
 extraClassHeader: "h-64"
 ---

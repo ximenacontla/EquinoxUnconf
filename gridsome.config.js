@@ -105,10 +105,6 @@ module.exports = {
     //     analyzerMode: 'static'
     //   }])
     config.plugin('MomentLocalesPlugin').use(MomentLocalesPlugin())
-
+    config.resolve.alias.set('@images', '@/assets/img')
   }
-
-
-
-
 }

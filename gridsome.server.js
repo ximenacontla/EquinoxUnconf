@@ -36,7 +36,7 @@ module.exports = function (api) {
       title: String,
       subtitle: String,
       content: String,
-      img: String,
+      img: Image,
       link: String,
       emoji: String,
       extraClass: String,

@@ -65,7 +65,7 @@ export default {
       ) {
         return this.img;
       } else {
-        return require("@/assets/img/" + this.img);
+        return require(`!!assets-loader!@images/${this.img}`);
       }
     },
   },
