@@ -6,6 +6,8 @@
 
 const tailwind = require('tailwindcss')
 const purgecss = require('@fullhuman/postcss-purgecss')
+// const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const MomentLocalesPlugin = require('moment-locales-webpack-plugin');
 
 const postcssPlugins = [
   tailwind(),
@@ -96,6 +98,15 @@ module.exports = {
       externalLinksRel: ['nofollow', 'noopener', 'noreferrer'],
     }
   },
+  chainWebpack: config => {
+    // config
+    //   .plugin('BundleAnalyzerPlugin')
+    //   .use(BundleAnalyzerPlugin, [{
+    //     analyzerMode: 'static'
+    //   }])
+    config.plugin('MomentLocalesPlugin').use(MomentLocalesPlugin())
+
+  }
 
 
 

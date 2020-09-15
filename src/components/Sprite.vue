@@ -2,7 +2,13 @@
   <div class="border border-black-900 sprite-wrapper-outer">
     <div class="sprite-wrapper position-relative">
       <div class="sprite-content" :style="sprites">
-        <g-image src="../assets/img/sprites/feel.jpg" height="480" width="640" class="transparent"></g-image>
+        <g-image
+          alt="signals animation"
+          src="~/assets/img/sprites/feel.jpg"
+          height="480"
+          width="640"
+          class="transparent"
+        ></g-image>
       </div>
     </div>
     <div class="p-3">
@@ -28,9 +34,9 @@ export default {
     },
   },
   computed: {
-    setImage: function () {
-      return require("@/assets/img/sprites/" + this.img);
-    },
+    // setImage: function () {
+    //   return require("@/assets/img/sprites/" + this.img);
+    // },
     sprites() {
       return `background: url("/sprites/${this.img}") left center; background-size: auto 100%;
 `;
