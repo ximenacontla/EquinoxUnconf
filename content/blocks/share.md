@@ -1,4 +1,4 @@
 ---
 title: Share
-subtitle: any role is yours
+subtitle: the space is yours
 ---

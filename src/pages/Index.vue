@@ -21,7 +21,7 @@
     <!-- agenda -->
     <div id="learn" class="flex flex-wrap my-40">
       <!-- the events are dynamically added from the /content/events files -->
-      <event-container />
+      <event-container :title="'Agenda'" :subtitle="'teach and learn'" />
     </div>
 
     <div id="share" class="my-40">
@@ -33,20 +33,20 @@
       </div>
 
       <!-- Emoji cards -->
-      <div v-if="page.card" id="teach" class="card-grid-1 mt-10">
+      <div v-if="page.card" id="teach" class="card-grid-1 mt-10 mb-5">
         <card v-if="page.card.role1" v-bind="page.card.role0"></card>
       </div>
-      <div v-if="page.card" id="teach" class="card-grid-2 mt-10">
+      <div v-if="page.card" id="teach" class="card-grid-2 mb-10">
         <card v-if="page.card.role1" v-bind="page.card.role1"></card>
         <card v-if="page.card.role2" v-bind="page.card.role2"></card>
       </div>
       <h2 class="mt-20">Signals</h2>
-      <span class="subtitle">some experiments</span>
+      <span class="subtitle">The non-verbal etiquette of the digital space</span>
+      <!-- Animated sprites -->
       <div class="card-grid-3 my-10">
-        <!-- @TODO: fix netlify path issues -->
-        <sprite :title="'Feel'" :img="'feel.jpg'"></sprite>
-        <sprite :img="'gotit.jpg'"></sprite>
-        <sprite :img="'move.jpg'"></sprite>
+        <sprite v-if="page.signal.feel" v-bind="page.signal.feel"></sprite>
+        <sprite v-if="page.signal.gotit" v-bind="page.signal.gotit"></sprite>
+        <sprite v-if="page.signal.move" v-bind="page.signal.move"></sprite>
       </div>
     </div>
   </LayoutCurtains>

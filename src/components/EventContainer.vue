@@ -1,11 +1,14 @@
 <template>
   <div>
     <div class="flex align-top pb-4">
-      <h2>{{title}}</h2>
+      <div class="mb-2">
+        <h2>{{title}}</h2>
+        <span class="subtitle">{{subtitle}}</span>
+      </div>
       <g-link
         href="/admin/"
         target="_blank"
-        class="ml-12 py-2 px-4 border border-accent-600 hover:bg-accent-600 hover:text-white"
+        class="ml-auto py-2 px-4 border border-accent-600 hover:bg-accent-600 hover:text-white self-center"
       >
         <span>+ Add your own event</span>
       </g-link>
@@ -41,6 +44,10 @@ export default {
     title: {
       required: false,
       default: "Agenda",
+    },
+    subtitle: {
+      required: false,
+      default: "learn and explore",
     },
   },
 };

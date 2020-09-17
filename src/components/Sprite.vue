@@ -13,7 +13,7 @@
     </div>
     <div class="p-3">
       <h3 v-if="title">{{title}}</h3>
-      <span>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Commodi exercitationem quod deleniti earum dolorem nesciunt expedita officia laboriosam accusamus laudantium, eius iusto fugit qui quae molestiae magnam non vero dolor.</span>
+      <div v-html="content"></div>
     </div>
   </div>
 </template>

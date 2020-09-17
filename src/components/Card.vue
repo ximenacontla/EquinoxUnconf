@@ -12,11 +12,9 @@
       <span>{{emoji}}</span>
     </div>
     <div class="card-body">
-      <h2 class="mb-4 text-2xl">{{title}}</h2>
-
-      <div class="mb-4 text-grey-darker text-sm flex-1" v-html="content"></div>
-
-      <g-link v-if="link" :to="link" class="uppercase self-end">learn more</g-link>
+      <h2 v-if="title" class="mb-4 text-2xl">{{title}}</h2>
+      <div class="text-grey-darker text-sm flex-1" v-html="content"></div>
+      <g-link v-if="link" :to="link" class="uppercase self-end mt-4">learn more</g-link>
     </div>
   </div>
 </template>
