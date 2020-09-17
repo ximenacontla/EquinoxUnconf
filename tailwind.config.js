@@ -6,9 +6,6 @@ const {
 module.exports = {
   purge: {
     enabled: false,
-    content: [
-      'content/**/*.md'
-    ],
 
   },
   theme: {
