@@ -5,7 +5,11 @@ const {
 
 module.exports = {
   purge: {
-    enabled: false
+    enabled: false,
+    content: [
+      'content/**/*.md'
+    ],
+
   },
   theme: {
     container: {
