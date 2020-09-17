@@ -24,11 +24,6 @@
       <event-container />
     </div>
 
-    <!-- example cards -->
-    <div class="card-grid-3 bg-black-900 p-3 my-40">
-      <card v-bind="page.card.example" :key="page.card.example.title"></card>
-    </div>
-
     <div id="share" class="my-40">
       <!-- share section -->
       <div>
@@ -38,6 +33,9 @@
       </div>
 
       <!-- Emoji cards -->
+      <div v-if="page.card" id="teach" class="card-grid-1 mt-10">
+        <card v-if="page.card.role1" v-bind="page.card.role0"></card>
+      </div>
       <div v-if="page.card" id="teach" class="card-grid-2 mt-10">
         <card v-if="page.card.role1" v-bind="page.card.role1"></card>
         <card v-if="page.card.role2" v-bind="page.card.role2"></card>

@@ -1,6 +1,6 @@
 <template>
   <div class="card" :class="extraClass">
-    <div class="w-full text-6xl flex justify-center items-center" :class="headerClass">
+    <div class="w-full flex justify-center items-center" :class="headerClass">
       <g-image
         v-if="img"
         :alt="title"
