@@ -6,6 +6,8 @@
 
 const tailwind = require('tailwindcss')
 const purgecss = require('@fullhuman/postcss-purgecss')
+// const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const MomentLocalesPlugin = require('moment-locales-webpack-plugin');
 
 const postcssPlugins = [
   tailwind(),
@@ -16,6 +18,7 @@ if (process.env.NODE_ENV === 'production') postcssPlugins.push(purgecss(require(
 module.exports = {
   siteName: 'Equinox Unconference',
   siteDescription: "22 Sep 2020 Fall Equinox Unconference",
+  siteUrl: "https://vigorous-ritchie-55cc2e.netlify.app/",
   templates: {
     Tag: [{
       path: '/event/tag/:title',
@@ -95,8 +98,13 @@ module.exports = {
       externalLinksRel: ['nofollow', 'noopener', 'noreferrer'],
     }
   },
-
-
-
-
+  chainWebpack: config => {
+    // config
+    //   .plugin('BundleAnalyzerPlugin')
+    //   .use(BundleAnalyzerPlugin, [{
+    //     analyzerMode: 'static'
+    //   }])
+    config.plugin('MomentLocalesPlugin').use(MomentLocalesPlugin())
+    config.resolve.alias.set('@images', '@/assets/img')
+  }
 }

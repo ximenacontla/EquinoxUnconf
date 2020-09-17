@@ -1,5 +1,5 @@
 ---
-title: Test even
+title: Patterns of Self Organisation
 excerpt: Illi enim inter se dissentiunt. Cum autem venissemus in Academiae non
   sine causa nobilitata spatia, solitudo erat ea, quam volueramus. Omnia
   contraria, quos etiam insanos esse vultis.

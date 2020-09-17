@@ -1,6 +1,6 @@
 ---
 title: "Storytelling: a mutual exploration of your tale"
-excerpt: Why do we need our tales? Because we do
+excerpt: Let's work on our stories, together
 date: 2020-09-22T00:00:00.000Z
 start_time: "0000"
 end_time: "0000"

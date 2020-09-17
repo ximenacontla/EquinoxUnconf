@@ -1,6 +1,6 @@
 ---
 title: Learn
-img: "bg.png"
+img: "fractal.jpg"
 link: "#learn"
 ---
 

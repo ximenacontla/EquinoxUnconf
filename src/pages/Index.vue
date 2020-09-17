@@ -45,6 +45,7 @@
       <h2 class="mt-20">Signals</h2>
       <span class="subtitle">some experiments</span>
       <div class="card-grid-3 my-10">
+        <!-- @TODO: fix netlify path issues -->
         <sprite :title="'Feel'" :img="'feel.jpg'"></sprite>
         <sprite :img="'gotit.jpg'"></sprite>
         <sprite :img="'move.jpg'"></sprite>
