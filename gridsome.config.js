@@ -17,7 +17,7 @@ if (process.env.NODE_ENV === 'production') postcssPlugins.push(purgecss(require(
 
 module.exports = {
   siteName: 'Equinox Unconference',
-  siteDescription: "22 Sep 2020 Fall Equinox Unconference",
+  siteDescription: "22 Sep 2020 Equinox Unconference - an open space to teach, learn and share",
   siteUrl: "https://vigorous-ritchie-55cc2e.netlify.app/",
   templates: {
     Tag: [{
@@ -73,7 +73,7 @@ module.exports = {
         statusBarStyle: "default",
         manifestPath: "manifest.json",
         serviceWorkerPath: "service-worker.js",
-        shortName: "Equinox Unconference",
+        shortName: "Unconference",
         themeColor: "#fd0719",
         backgroundColor: "#ffffff",
         purpose: "maskable",

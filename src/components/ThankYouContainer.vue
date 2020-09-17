@@ -14,6 +14,7 @@ export default {
     return {
       thankyou: [
         "Monique",
+        "Maija",
         "Rishi",
         "Josh",
         "Ome",

@@ -1,6 +1,4 @@
 ---
-title: Hats
-subtitle: about
+title: Share
+subtitle: the space is yours
 ---
-
-Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sed sequi, id architecto est obcaecati ipsum accusantium quod aliquam ratione illum, excepturi modi suscipit a eos esse alias ad! Commodi, voluptatem.
