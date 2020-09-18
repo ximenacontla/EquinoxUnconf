@@ -23,26 +23,24 @@
       <!-- end navigation toggle -->
 
       <!-- Navigation Links-->
-      <div
+
+      <scrollactive
         :class="open ? 'block': 'hidden'"
         class="w-full sm:flex sm:items-center sm:w-auto flex-grow sm:flex-grow-0"
+        active-class="active--exact"
+        :offset="120"
       >
-        <a
-          v-if="$route.path === '/'"
-          href="#unconference"
+        <router-link
+          to="/#unconference"
           v-scroll-to="'#unconference'"
-          class="nav-link"
-        >Unconference</a>
-        <g-link v-else to="/#unconferece" class="nav-link">Unconference</g-link>
-        <a v-if="$route.path === '/'" href="#teach" v-scroll-to="'#teach'" class="nav-link">Teach</a>
-        <g-link v-else to="/#teach" class="nav-link">Teach</g-link>
-        <a v-if="$route.path === '/'" href="#learn" v-scroll-to="'#learn'" class="nav-link">Learn</a>
-        <g-link v-else to="/#learn" class="nav-link">Learn</g-link>
-        <a v-if="$route.path === '/'" href="#share" v-scroll-to="'#share'" class="nav-link">Share</a>
-        <g-link v-else to="/#share" class="nav-link">Share</g-link>
-        <a v-if="$route.path === '/'" href="#FAQ" v-scroll-to="'#FAQ'" class="nav-link">FAQ</a>
-        <g-link v-else to="/#FAQ" class="nav-link">FAQ</g-link>
-      </div>
+          class="nav-link scrollactive-item"
+        >unconference</router-link>
+        <router-link to="/#teach" v-scroll-to="'#teach'" class="nav-link scrollactive-item">teach</router-link>
+        <router-link to="/#learn" v-scroll-to="'#learn'" class="nav-link scrollactive-item">learn</router-link>
+        <router-link to="/#share" v-scroll-to="'#share'" class="nav-link scrollactive-item">share</router-link>
+        <g-link to="/#FAQ" v-scroll-to="'#FAQ'" class="nav-link scrollactive-item">FAQ</g-link>
+      </scrollactive>
+
       <!-- End navigation Links-->
     </nav>
   </header>
