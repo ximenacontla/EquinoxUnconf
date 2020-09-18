@@ -40,6 +40,8 @@
         <g-link v-else to="/#learn" class="nav-link">Learn</g-link>
         <a v-if="$route.path === '/'" href="#share" v-scroll-to="'#share'" class="nav-link">Share</a>
         <g-link v-else to="/#share" class="nav-link">Share</g-link>
+        <a v-if="$route.path === '/'" href="#FAQ" v-scroll-to="'#FAQ'" class="nav-link">FAQ</a>
+        <g-link v-else to="/#FAQ" class="nav-link">FAQ</g-link>
       </div>
       <!-- End navigation Links-->
     </nav>

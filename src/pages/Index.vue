@@ -40,6 +40,14 @@
         <card v-if="page.card.role1" v-bind="page.card.role1"></card>
         <card v-if="page.card.role2" v-bind="page.card.role2"></card>
       </div>
+    </div>
+    <div id="FAQ" class="my-40">
+      <!-- share section -->
+      <div>
+        <h2>{{page.faq.title}}</h2>
+        <span class="subtitle">{{page.faq.subtitle}}</span>
+        <article class="prose max-w-full" v-html="page.faq.content"></article>
+      </div>
       <h2 class="mt-20">Signals</h2>
       <span class="subtitle">The non-verbal etiquette of the digital space</span>
       <!-- Animated sprites -->
