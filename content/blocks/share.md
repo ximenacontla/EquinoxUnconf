@@ -1,4 +1,4 @@
 ---
 title: Share
-subtitle: the space is yours
+subtitle: Participate artfully
 ---
