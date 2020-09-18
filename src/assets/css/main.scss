@@ -65,14 +65,32 @@ html {
 
 
 .badge {
-    @apply text-xs bg-black-900 text-white py-1 px-2 mr-4
+    @apply text-xs bg-black-900 text-white py-1 px-2 mr-4;
+
+    &.badge-light {
+        @apply bg-transparent text-black-900 border border-black-900;
+
+        &:hover {
+            @apply border-accent-500
+        }
+    }
 }
 
 .badge a {
     @apply text-white uppercase;
 
+
+
     &:hover {
         @apply text-secondary-500
+    }
+}
+
+.badge-light a {
+    @apply text-black-900;
+
+    &:hover {
+        @apply text-accent-500
     }
 }
 
