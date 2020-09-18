@@ -72,6 +72,7 @@ module.exports = {
         display: "minimal-UI",
         statusBarStyle: "default",
         manifestPath: "manifest.json",
+        disableServiceWorker: true,
         serviceWorkerPath: "service-worker.js",
         shortName: "Unconference",
         themeColor: "#fd0719",
