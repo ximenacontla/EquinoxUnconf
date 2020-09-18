@@ -55,6 +55,16 @@ module.exports = function (api) {
         }
       }
     })
+    addSchemaResolvers({
+      Event: {
+        hasContent: {
+          type: 'Boolean',
+          resolve(obj) {
+            return obj.content.length
+          }
+        }
+      }
+    })
   })
 
   api.createPages(({

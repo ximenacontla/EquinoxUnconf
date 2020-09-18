@@ -6,9 +6,10 @@
         <span class="text-4xl">{{ event.node.start_time | formatTime(false,true) }}</span>
       </dt>
       <dd class="col-span-2 lg:col-span-3" :key="index">
-        <g-link :to="event.node.path">
+        <g-link v-if="event.node.hasContent" :to="event.node.path">
           <h3 class="mb-2 text-2xl">{{ event.node.title }}</h3>
         </g-link>
+        <h3 v-else class="mb-2 text-2xl">{{ event.node.title }}</h3>
         <p class="mb-4 flex-1">{{ event.node.excerpt }}</p>
       </dd>
     </template>

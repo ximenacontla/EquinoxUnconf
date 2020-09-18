@@ -32,6 +32,7 @@ query Event {
         start_time
         end_time
         date
+        hasContent
       }
     }
   }
