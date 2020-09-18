@@ -12,7 +12,6 @@ import HeroContainer from '~/layouts/partials/HeroContainer.vue'
 import HeroCurtains from '~/layouts/partials/HeroCurtains.vue' //animation for equinox
 
 import Card from '~/components/Card.vue'
-import VueScrollTo from 'vue-scrollto'
 import EventContainer from '~/components/EventContainer.vue'
 import EventList from '~/components/EventList.vue'
 import TagNav from '~/components/TagNav.vue'
@@ -63,19 +62,7 @@ export default function (Vue, {
   Vue.component('sprite', Sprite)
   Vue.use(VueScrollactive);
   //initilize other plugins
-  Vue.use(VueScrollTo, {
-    container: "body",
-    duration: 200,
-    easing: "ease-out",
-    offset: -200,
-    force: true,
-    cancelable: true,
-    onStart: false,
-    onDone: false,
-    onCancel: false,
-    x: false,
-    y: true
-  });
+
 
   Vue.filter('formatDate', function (value, format) {
     if (!value) return;

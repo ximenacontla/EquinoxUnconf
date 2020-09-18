@@ -27,7 +27,6 @@
     "node-sass": "^4.14.1",
     "sass-loader": "^8.0.2",
     "tailwindcss": "^1.7.6",
-    "vue-scrollto": "^2.18.2",
     "webpack-bundle-analyzer": "^3.8.0"
   }
 }

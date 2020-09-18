@@ -27,8 +27,10 @@
       <scrollactive
         :class="open ? 'block': 'hidden'"
         class="w-full sm:flex sm:items-center sm:w-auto flex-grow sm:flex-grow-0"
-        active-class="active--exact"
+        active-class="active"
         :offset="120"
+        :duration="100"
+        bezier-easing-value="0,0,.58,1"
       >
         <router-link
           to="/#unconference"
@@ -85,7 +87,7 @@ nav {
     }
     &:hover,
     &:focus,
-    &.active--exact {
+    &.active {
       @apply text-accent-600;
     }
   }
