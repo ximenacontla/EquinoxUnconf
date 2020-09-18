@@ -101,18 +101,7 @@ export default function (Vue, {
 
   //gridsome configs for head
 
-  head.meta.push({
-    key: 'og:description',
-    name: 'og:description',
-    content: `Equinox Unconference`,
-  })
 
-  head.meta.push({
-    key: 'twitter:description',
-    name: 'twitter:description',
-    content: `Equinox Unconference`,
-
-  })
 
 
 

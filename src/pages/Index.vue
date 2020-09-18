@@ -82,6 +82,7 @@ query Blocks {
     metadata {
     siteName
     siteUrl
+    siteDescription
   }
 }
 </static-query>
@@ -91,15 +92,22 @@ query Blocks {
 export default {
   metaInfo() {
     return {
-      title: "Equinox",
       meta: [
         // twitter-card: https://cards-dev.twitter.com/validator
-        { name: "twitter:title", content: "Equinox Unconference" },
+        { name: "twitter:title", content: this.$static.metadata.siteName },
         { name: "twitter:card", content: "summary_large_image" },
+        {
+          name: "twitter:description",
+          content: this.$static.metadata.siteDescription,
+        },
         { name: "twitter:image", content: this.getCoverImage },
-        { name: "og:title", content: "Equinox Unconference" },
-        { name: "og:url", content: this.getUrl },
-        { name: "og:image", content: this.getCoverImage },
+        { property: "og:title", content: this.$static.metadata.siteName },
+        { property: "og:url", content: this.getUrl },
+        { property: "og:image", content: this.getCoverImage },
+        {
+          property: "og:description",
+          content: this.$static.metadata.siteDescription,
+        },
       ],
     };
   },
