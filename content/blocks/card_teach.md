@@ -1,7 +1,6 @@
 ---
 title: Teach
 img: "mandelbrotted_color.jpg"
-link: "/teach"
 ---
 
 Share an experience of open space with a diverse and interesting group who are co-creating and organising themselves around a shared collection of narratives.

@@ -34,8 +34,8 @@
           class="nav-link"
         >Unconference</a>
         <g-link v-else to="/#unconferece" class="nav-link">Unconference</g-link>
-
-        <g-link to="/teach" class="nav-link">Teach</g-link>
+        <a v-if="$route.path === '/'" href="#teach" v-scroll-to="'#teach'" class="nav-link">Teach</a>
+        <g-link v-else to="/#teach" class="nav-link">Teach</g-link>
         <a v-if="$route.path === '/'" href="#learn" v-scroll-to="'#learn'" class="nav-link">Learn</a>
         <g-link v-else to="/#learn" class="nav-link">Learn</g-link>
         <a v-if="$route.path === '/'" href="#share" v-scroll-to="'#share'" class="nav-link">Share</a>
