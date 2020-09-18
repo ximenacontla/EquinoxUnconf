@@ -10,7 +10,7 @@
         <g-image
           v-if="bg"
           :immediate="true"
-          :src="setImage"
+          src="~/assets/img/bg.png"
           data-sampler="planeTexture"
           class="shade-img"
         />
