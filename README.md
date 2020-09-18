@@ -1,6 +1,4 @@
-[![Netlify Status](https://api.netlify.com/api/v1/badges/082728bf-8ea7-4aa5-a300-01bdc3d6d89a/deploy-status)](https://app.netlify.com/sites/vigorous-ritchie-55cc2e/deploys)
-
-[Netlify Demo](https://vigorous-ritchie-55cc2e.netlify.app/)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/05e4a477-68a7-42bf-b14b-4810c41f2bbe/deploy-status)](https://app.netlify.com/sites/equinoxunconference/deploys)
 
 1. Install Gridsome CLI tool if you don't have it: `npm install --global @gridsome/cli`
 2. Clone the repo: `git@github.com:hack-along/EquinoxUnconf.git`
