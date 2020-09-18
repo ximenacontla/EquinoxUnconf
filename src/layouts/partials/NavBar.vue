@@ -4,7 +4,11 @@
     <nav class="flex items-center justify-between flex-wrap py-6 container">
       <!-- site title / logo -->
       <div class="flex items-center flex-no-shrink mr-6 h-10">
-        <g-link class="nav-link" to="/" :title="$static.metadata.siteName">
+        <g-link
+          class="text-accent-500 uppercase py-3 text-right font-bold"
+          to="/"
+          :title="$static.metadata.siteName"
+        >
           Equinox 22/09/2020
           <!-- <g-image src="../../static/logo.svg" width="50" height="50" alt="logo" fit="outside" /> -->
         </g-link>
@@ -32,15 +36,11 @@
         :duration="100"
         bezier-easing-value="0,0,.58,1"
       >
-        <router-link
-          to="/#unconference"
-          v-scroll-to="'#unconference'"
-          class="nav-link scrollactive-item"
-        >unconference</router-link>
-        <router-link to="/#teach" v-scroll-to="'#teach'" class="nav-link scrollactive-item">teach</router-link>
-        <router-link to="/#learn" v-scroll-to="'#learn'" class="nav-link scrollactive-item">learn</router-link>
-        <router-link to="/#share" v-scroll-to="'#share'" class="nav-link scrollactive-item">share</router-link>
-        <g-link to="/#FAQ" v-scroll-to="'#FAQ'" class="nav-link scrollactive-item">FAQ</g-link>
+        <router-link to="/#unconference" class="nav-link scrollactive-item">unconference</router-link>
+        <router-link to="/#teach" class="nav-link scrollactive-item">teach</router-link>
+        <router-link to="/#learn" class="nav-link scrollactive-item">learn</router-link>
+        <router-link to="/#share" class="nav-link scrollactive-item">share</router-link>
+        <g-link to="/#FAQ" class="nav-link scrollactive-item">FAQ</g-link>
       </scrollactive>
 
       <!-- End navigation Links-->
