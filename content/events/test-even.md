@@ -1,8 +1,6 @@
 ---
 title: Patterns of Self Organisation
-excerpt: Illi enim inter se dissentiunt. Cum autem venissemus in Academiae non
-  sine causa nobilitata spatia, solitudo erat ea, quam volueramus. Omnia
-  contraria, quos etiam insanos esse vultis.
+excerpt: What is self-organisation? To different people it means differnt things, lets frame the conversation together and build a common context around what works and what doesnt work. 
 date: 2020-09-22T00:00:00.000Z
 start_time: "1500"
 end_time: "1530"
