@@ -26,7 +26,6 @@ export function initCurtains() {
     curtains.onRender(function () {
         // update our planes deformation
         // increase/decrease the effect
-        console.log("Im rednerding")
         if (elementInViewport2(animatedElement)) {
             scrollEffect = lerp(scrollEffect, 0, 0.05);
             if (!paused) {

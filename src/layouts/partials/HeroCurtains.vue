@@ -94,11 +94,6 @@ export default {
       }
     },
   },
-  computed: {
-    setImage: function () {
-      return require(`!!assets-loader!@images/${this.bg}`);
-    },
-  },
   mounted() {
     var lineDrawing = anime({
       targets: "path, rect, circle",
