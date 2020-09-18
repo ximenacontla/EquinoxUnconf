@@ -5,7 +5,8 @@ const {
 
 module.exports = {
   purge: {
-    enabled: false
+    enabled: false,
+
   },
   theme: {
     container: {
