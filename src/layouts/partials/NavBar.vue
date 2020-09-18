@@ -4,7 +4,11 @@
     <nav class="flex items-center justify-between flex-wrap py-6 container">
       <!-- site title / logo -->
       <div class="flex items-center flex-no-shrink mr-6 h-10">
-        <g-link class="nav-link" to="/" :title="$static.metadata.siteName">
+        <g-link
+          class="text-accent-500 uppercase py-3 text-right font-bold"
+          to="/"
+          :title="$static.metadata.siteName"
+        >
           Equinox 22/09/2020
           <!-- <g-image src="../../static/logo.svg" width="50" height="50" alt="logo" fit="outside" /> -->
         </g-link>
@@ -23,24 +27,22 @@
       <!-- end navigation toggle -->
 
       <!-- Navigation Links-->
-      <div
+
+      <scrollactive
         :class="open ? 'block': 'hidden'"
         class="w-full sm:flex sm:items-center sm:w-auto flex-grow sm:flex-grow-0"
+        active-class="active"
+        :offset="120"
+        :duration="100"
+        bezier-easing-value="0,0,.58,1"
       >
-        <a
-          v-if="$route.path === '/'"
-          href="#unconference"
-          v-scroll-to="'#unconference'"
-          class="nav-link"
-        >Unconference</a>
-        <g-link v-else to="/#unconferece" class="nav-link">Unconference</g-link>
+        <router-link to="/#unconference" class="nav-link scrollactive-item">unconference</router-link>
+        <router-link to="/#teach" class="nav-link scrollactive-item">teach</router-link>
+        <router-link to="/#learn" class="nav-link scrollactive-item">learn</router-link>
+        <router-link to="/#share" class="nav-link scrollactive-item">share</router-link>
+        <g-link to="/#FAQ" class="nav-link scrollactive-item">FAQ</g-link>
+      </scrollactive>
 
-        <g-link to="/teach" class="nav-link">Teach</g-link>
-        <a v-if="$route.path === '/'" href="#learn" v-scroll-to="'#learn'" class="nav-link">Learn</a>
-        <g-link v-else to="/#learn" class="nav-link">Learn</g-link>
-        <a v-if="$route.path === '/'" href="#share" v-scroll-to="'#share'" class="nav-link">Share</a>
-        <g-link v-else to="/#share" class="nav-link">Share</g-link>
-      </div>
       <!-- End navigation Links-->
     </nav>
   </header>
@@ -85,7 +87,7 @@ nav {
     }
     &:hover,
     &:focus,
-    &.active--exact {
+    &.active {
       @apply text-accent-600;
     }
   }

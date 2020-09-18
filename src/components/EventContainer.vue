@@ -1,14 +1,15 @@
 <template>
   <div>
-    <div class="flex align-top pb-4">
-      <div class="mb-2">
+    <div class="flex align-top pb-0">
+      <div class="mb-0">
         <h2>{{title}}</h2>
         <span class="subtitle">{{subtitle}}</span>
+        <tag-nav notitle class="mt-10" />
       </div>
       <g-link
         href="/admin/"
         target="_blank"
-        class="ml-auto py-2 px-4 border border-accent-600 hover:bg-accent-600 hover:text-white self-center"
+        class="ml-auto py-2 px-4 border border-accent-600 hover:bg-accent-600 hover:text-white self-start"
       >
         <span>+ Add your own event</span>
       </g-link>
@@ -17,7 +18,6 @@
     <div v-else class="p-4 mt-4">
       <p>sorry, nothing to show at the moment!</p>
     </div>
-    <tag-nav class="pt-10" />
   </div>
 </template>
 
@@ -32,6 +32,12 @@ query Event {
         start_time
         end_time
         date
+        hasContent
+        tags {
+              id
+              title
+              path
+            }
       }
     }
   }

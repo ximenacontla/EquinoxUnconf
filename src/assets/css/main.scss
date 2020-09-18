@@ -2,127 +2,135 @@
 @import url("https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap");
 
 @font-face {
-    font-family: "impact_label_reversedregular";
-    src: url("../../assets/fonts/Impact_Label_Reversed-webfont.woff") format("woff");
-    font-weight: normal;
-    font-style: normal;
+  font-family: "impact_label_reversedregular";
+  src: url("../../assets/fonts/Impact_Label_Reversed-webfont.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
 }
 
 h1 {
-    @apply text-2xl font-bold;
+  @apply text-2xl font-bold;
 }
 
 h2 {
-    @apply text-2xl font-bold;
+  @apply text-2xl font-bold;
 }
 
 h3 {
-    @apply text-lg font-bold;
+  @apply text-lg font-bold;
 }
 
 a {
-    @apply text-accent-600;
-    transition: color 0.1s ease-out;
-    font-weight: 500;
+  @apply text-accent-600;
+  transition: color 0.1s ease-out;
+  font-weight: 500;
 
-    &:hover {
-        @apply text-secondary-500;
-        transition: color 0.05s ease-out;
-    }
+  &:hover {
+    @apply text-secondary-500;
+    transition: color 0.05s ease-out;
+  }
 
-    &.stretched-link {
-        &:after {
-            position: absolute;
-            top: 0;
-            right: 0;
-            bottom: 0;
-            left: 0;
-            z-index: 1;
-            pointer-events: auto;
-            content: "";
-            background-color: rgba(0, 0, 0, 0);
-        }
+  &.stretched-link {
+    &:after {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 1;
+      pointer-events: auto;
+      content: "";
+      background-color: rgba(0, 0, 0, 0);
     }
+  }
 }
 
 p {
-    @apply mb-4;
+  @apply mb-4;
 }
 
 @tailwind components;
 
 @tailwind utilities;
 
-
 body {
-    font-family: "DM Mono", monospace;
+  font-family: "DM Mono", monospace;
 }
 
 html {
-    scroll-behavior: smooth;
-    height: -webkit-fill-available;
+  scroll-behavior: smooth;
+  height: -webkit-fill-available;
 }
 
-
 .badge {
-    @apply text-xs bg-black-900 text-white py-1 px-2 mr-4
+  @apply text-xs bg-black-900 text-white py-1 px-2 mr-4;
+
+  &.badge-light {
+    @apply bg-transparent text-black-900 border border-black-900;
+
+    &:hover {
+      @apply border-accent-500;
+    }
+  }
 }
 
 .badge a {
-    @apply text-white uppercase;
+  @apply text-white uppercase;
 
-    &:hover {
-        @apply text-secondary-500
-    }
+  &:hover {
+    @apply text-secondary-500;
+  }
+}
+
+.badge-light a {
+  @apply text-black-900;
+
+  &:hover {
+    @apply text-accent-500;
+  }
 }
 
 .subtitle {
-    @apply text-grey-900 block mb-4;
+  @apply text-grey-900 block mb-4;
 }
 
 .h-96 {
-    height: 24rem;
+  height: 24rem;
 }
 
 .card {
+  @apply bg-white border border-primary-900 overflow-hidden flex-1 flex flex-col relative;
 
-    @apply bg-white border border-primary-900 overflow-hidden flex-1 flex flex-col relative;
-
-    .card-body {
-        @apply p-4 flex-1 flex flex-col;
-    }
-
-
+  .card-body {
+    @apply p-4 flex-1 flex flex-col;
+  }
 }
 
 .card-grid-3 {
-    @apply grid gap-3 grid-cols-1;
+  @apply grid gap-3 grid-cols-1;
 
-    @media (min-width: 768px) {
-        @apply grid-cols-2
-    }
+  @media (min-width: 768px) {
+    @apply grid-cols-2;
+  }
 
-    @media (min-width: 1024px) {
-        @apply grid-cols-3
-    }
-
-
+  @media (min-width: 1024px) {
+    @apply grid-cols-3;
+  }
 }
 
 .card-grid-1 {
-    @apply grid gap-5 grid-cols-1;
+  @apply grid gap-5 grid-cols-1;
 
-    @media (min-width: 768px) {
-        @apply grid-cols-1
-    }
-
-
+  @media (min-width: 768px) {
+    @apply grid-cols-1;
+  }
 }
 
 .card-grid-2 {
-    @apply grid gap-5 grid-cols-1;
+  @apply grid gap-5 grid-cols-1;
 
-    @media (min-width: 768px) {
-        @apply grid-cols-2
-    }
+  @media (min-width: 768px) {
+    @apply grid-cols-2;
+  }
 }

@@ -1,6 +1,6 @@
 <template>
   <div>
-    Tags:
+    <span v-if="!notitle">Tags:</span>
     <div class="flex pb-4 flex-wrap">
       <div class="badge" v-for="tag in $static.tags.edges" :key="tag.id">
         <g-link
@@ -11,7 +11,17 @@
     </div>
   </div>
 </template>
-
+<script>
+export default {
+  props: {
+    notitle: {
+      type: Boolean,
+      required: false,
+      default: false,
+    },
+  },
+};
+</script>
 
 <static-query>
 query Tag {

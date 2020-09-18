@@ -10,7 +10,7 @@
         <g-image
           v-if="bg"
           :immediate="true"
-          :src="setImage"
+          src="~/assets/img/bg.png"
           data-sampler="planeTexture"
           class="shade-img"
         />
@@ -18,7 +18,7 @@
     </div>
 
     <div class="hide-before-load logo z-30 w-100">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1590 159">
+      <svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1590 159">
         <g
           fill="none"
           stroke="#000"
@@ -26,7 +26,7 @@
           stroke-width="1.6"
           transform="matrix(3.77953 0 0 3.77953 1206.15 -511.845)"
         >
-          <a transform="translate(-195.699 66.182)">
+          <a alt="logo" transform="translate(-195.699 66.182)">
             <path
               d="M16.564 101.094c8.096 0 7.536.804 12.034-14.234 4.498-15.038 7.006-13.804 13.303-13.804"
             />
@@ -92,11 +92,6 @@ export default {
       for (i = 0; i < elements.length; i++) {
         elements[i].style.opacity = "1";
       }
-    },
-  },
-  computed: {
-    setImage: function () {
-      return require(`!!assets-loader!@images/${this.bg}`);
     },
   },
   mounted() {

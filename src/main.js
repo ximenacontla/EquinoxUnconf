@@ -12,7 +12,6 @@ import HeroContainer from '~/layouts/partials/HeroContainer.vue'
 import HeroCurtains from '~/layouts/partials/HeroCurtains.vue' //animation for equinox
 
 import Card from '~/components/Card.vue'
-import VueScrollTo from 'vue-scrollto'
 import EventContainer from '~/components/EventContainer.vue'
 import EventList from '~/components/EventList.vue'
 import TagNav from '~/components/TagNav.vue'
@@ -21,6 +20,8 @@ import ThankYou from '~/components/ThankYouContainer.vue'
 
 import IndexPage from '~/pages/Index.vue'
 import Sprite from '~/components/Sprite.vue'
+
+import VueScrollactive from 'vue-scrollactive';
 
 
 
@@ -59,21 +60,9 @@ export default function (Vue, {
 
   //animation
   Vue.component('sprite', Sprite)
-
+  Vue.use(VueScrollactive);
   //initilize other plugins
-  Vue.use(VueScrollTo, {
-    container: "body",
-    duration: 200,
-    easing: "ease-out",
-    offset: -200,
-    force: true,
-    cancelable: true,
-    onStart: false,
-    onDone: false,
-    onCancel: false,
-    x: false,
-    y: true
-  });
+
 
   Vue.filter('formatDate', function (value, format) {
     if (!value) return;
@@ -112,18 +101,7 @@ export default function (Vue, {
 
   //gridsome configs for head
 
-  head.meta.push({
-    key: 'og:description',
-    name: 'og:description',
-    content: `Equinox Unconference`,
-  })
 
-  head.meta.push({
-    key: 'twitter:description',
-    name: 'twitter:description',
-    content: `Equinox Unconference`,
-
-  })
 
 
 
