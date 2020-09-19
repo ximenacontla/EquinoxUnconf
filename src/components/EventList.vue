@@ -18,7 +18,7 @@
           </div>
         </div>
 
-        <p class="mb-4 flex-1">{{ event.node.excerpt }}</p>
+        <p class="mb-4 flex-1" v-html="event.node.excerpt" />
       </dd>
     </template>
   </dl>

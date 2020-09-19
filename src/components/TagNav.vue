@@ -2,7 +2,7 @@
   <div>
     <span v-if="!notitle">Tags:</span>
     <div class="flex pb-4 flex-wrap">
-      <div class="badge" v-for="tag in $static.tags.edges" :key="tag.id">
+      <div class="badge mb-2" v-for="tag in $static.tags.edges" :key="tag.id">
         <g-link
           class="badge-link"
           :to="tag.node.path"
@@ -25,7 +25,7 @@ export default {
 
 <static-query>
 query Tag {
-  tags: allTag {
+  tags: allTag (sort:[ {by: "id", order:ASC}, {by:"belongsTo.totalCount", order:ASC}] ) {
     totalCount
   	edges {
       node {
