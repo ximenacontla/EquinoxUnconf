@@ -33,6 +33,9 @@ query Event {
         end_time
         date
         hasContent
+        fileInfo {
+          path
+        }
         tags {
               id
               title
