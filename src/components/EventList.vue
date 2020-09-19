@@ -12,6 +12,7 @@
               <h3 class="mb-1 text-2xl">{{ event.node.title }}</h3>
             </g-link>
             <h3 v-else class="mb-1 text-2xl">{{ event.node.title }}</h3>
+            <!--@TODO export to an a edit component -->
             <g-link
               class="text-sm text-gray-400"
               :to="editLink(event.node.fileInfo.path)"

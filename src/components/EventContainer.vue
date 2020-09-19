@@ -4,7 +4,6 @@
       <div class="mb-0">
         <h2>{{title}}</h2>
         <span class="subtitle">{{subtitle}}</span>
-        <tag-nav notitle class="mt-10" />
       </div>
       <g-link
         href="/admin/"
@@ -14,6 +13,8 @@
         <span>+ Add your own event</span>
       </g-link>
     </div>
+    <tag-nav notitle class="mb-10" />
+
     <event-list v-if="$static.events.edges.length > 0" :events="$static.events" />
     <div v-else class="p-4 mt-4">
       <p>sorry, nothing to show at the moment!</p>
