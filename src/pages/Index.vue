@@ -42,7 +42,7 @@
       </div>
     </div>
     <div id="FAQ" class="my-40">
-      <!-- share section -->
+      <!-- FAQ?? -->
       <div>
         <h2>{{page.faq.title}}</h2>
         <span class="subtitle">{{page.faq.subtitle}}</span>
