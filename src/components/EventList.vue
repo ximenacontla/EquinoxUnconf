@@ -27,8 +27,8 @@
               </svg>
             </g-link>
           </div>
-          <div v-if="event.node.tags" class="flex mb-3">
-            <div class="badge badge-light" v-for="tag in event.node.tags" :key="tag.id">
+          <div v-if="event.node.tags" class="flex mb-3 flex-wrap">
+            <div class="badge badge-light mb-2" v-for="tag in event.node.tags" :key="tag.id">
               <g-link class="badge-link" :to="tag.path">{{tag.id}}</g-link>
             </div>
           </div>
