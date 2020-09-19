@@ -5,7 +5,7 @@
       <!-- site title / logo -->
       <div class="flex items-center flex-no-shrink mr-6 h-10">
         <g-link
-          class="text-accent-500 uppercase py-3 text-right font-bold"
+          class="text-accent-600 uppercase py-3 text-right font-bold"
           to="/"
           :title="$static.metadata.siteName"
         >
