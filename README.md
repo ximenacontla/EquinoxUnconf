@@ -1,6 +1,6 @@
-[![Netlify Status](https://api.netlify.com/api/v1/badges/082728bf-8ea7-4aa5-a300-01bdc3d6d89a/deploy-status)](https://app.netlify.com/sites/vigorous-ritchie-55cc2e/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/05e4a477-68a7-42bf-b14b-4810c41f2bbe/deploy-status)](https://app.netlify.com/sites/equinoxunconference/deploys)
 
-[Netlify Demo](https://vigorous-ritchie-55cc2e.netlify.app/)
+[**live site**](https://unconference.hackalong.io/)
 
 1. Install Gridsome CLI tool if you don't have it: `npm install --global @gridsome/cli`
 2. Clone the repo: `git@github.com:hack-along/EquinoxUnconf.git`
@@ -12,7 +12,7 @@
 # Events
 
 There are two ways you can change or add events to the Unconference repo.
-First one is by adding makdown (`.md`) files to [Content / Events directory](https://github.com/hack-along/EquinoxUnconf/blob/master/content/events/) or by goint to [Netlify CMS admin pannel](https://vigorous-ritchie-55cc2e.netlify.app/admin).
+First one is by adding makdown (`.md`) files to [Content / Events directory](https://github.com/hack-along/EquinoxUnconf/blob/master/content/events/) or by goint to [Netlify CMS admin pannel](https://unconference.hackalong.io/admin).
 
 ### Adding Events via Github
 
@@ -32,7 +32,7 @@ Use this **front matter** syntax to add any aditonal info before your main conte
 
 ### Adding Events via NetlifyCMS
 
-Just go to [Netlify CMS admin pannel](https://vigorous-ritchie-55cc2e.netlify.app/admin) and authorize the github/netlify connection.
+Just go to [Netlify CMS admin pannel](https://unconference.hackalong.io/admin) and authorize the github/netlify connection.
 From there on you can access the CMS and add or edit your own events. The markdown generated will look slightly different.
 
     ---

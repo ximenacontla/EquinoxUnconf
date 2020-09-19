@@ -42,14 +42,15 @@
       </div>
     </div>
     <div id="FAQ" class="my-40">
-      <!-- share section -->
+      <!-- FAQ?? -->
       <div>
         <h2>{{page.faq.title}}</h2>
         <span class="subtitle">{{page.faq.subtitle}}</span>
-        <article class="prose max-w-full" v-html="page.faq.content"></article>
+        <article v-if="page.faq.content" class="prose max-w-full" v-html="page.faq.content"></article>
       </div>
-      <h2 class="mt-20">Signals</h2>
-      <span class="subtitle">The non-verbal etiquette of the digital space</span>
+      <h2 class="mt-20">{{page.signals.title}}</h2>
+      <span class="subtitle">{{page.signals.subtitle}}</span>
+      <article v-if="page.signals.content" class="prose max-w-full" v-html="page.signals.content"></article>
       <!-- Animated sprites -->
       <div class="card-grid-3 my-10">
         <sprite v-if="page.signal.feel" v-bind="page.signal.feel"></sprite>
