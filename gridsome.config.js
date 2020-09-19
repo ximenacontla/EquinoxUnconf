@@ -64,26 +64,27 @@ module.exports = {
         publicPath: `/admin`
       }
     },
-    {
-      use: "gridsome-plugin-pwa",
-      options: {
-        title: "Equinox Unconference",
-        startUrl: "/",
-        display: "minimal-UI",
-        statusBarStyle: "default",
-        manifestPath: "manifest.json",
-        disableServiceWorker: true,
-        serviceWorkerPath: "service-worker.js",
-        shortName: "Unconference",
-        themeColor: "#fd0719",
-        backgroundColor: "#ffffff",
-        purpose: "maskable",
-        icon: "src/favicon.png",
-        svgFavicon: 'favicon.svg',
-        msTileImage: "src/favicon.png",
-        msTileColor: "#fd0719",
-      }
-    }
+    // {
+    //   use: "gridsome-plugin-pwa",
+    //   options: {
+    //     title: "Equinox Unconference",
+    //     startUrl: "/",
+    //     disableServiceWorker: true,
+    //     display: "minimal-UI",
+    //     statusBarStyle: "default",
+    //     manifestPath: "manifest.json",
+    //     cachedFileTypes: 'css,html,jpg',
+    //     disableTemplatedUrls: true,
+    //     shortName: "Unconference",
+    //     themeColor: "#fd0719",
+    //     backgroundColor: "#ffffff",
+    //     purpose: "maskable",
+    //     icon: "src/favicon.png",
+    //     svgFavicon: 'favicon.svg',
+    //     msTileImage: "src/favicon.png",
+    //     msTileColor: "#fd0719",
+    //   }
+    // }
 
   ],
   css: {
