@@ -7,8 +7,10 @@ end_time: "0000"
 thumbnail: /uploads/events/vision-train_orig.jpg
 tags:
   - discussion
-  - alternative economics
+  - alternative currencies
   - transition
+  - resource based economy
+  - sharing economy
 ---
 Abundance should be for everyone. But how to achieve abundance on a planet with limited resources and an economic system based on scarcity and extractive behaviour?
 
